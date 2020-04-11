@@ -94,9 +94,10 @@ span.ace {
 
 
 .toolbar1 img {
-    margin-top: 4px;
-    margin-right: 6px;
     width: 5%;
+    position: absolute;
+    right: 8px;
+    top: 4px;
 }
 
 .toolbar2 {
@@ -848,5 +849,5 @@ a.headerRightIcon i {
     max-height: 1px;
     min-height: 1px;
     overflow: hidden;
-    margin: 6px 0 6px;
+    margin: 10px 0 10px;
 }
