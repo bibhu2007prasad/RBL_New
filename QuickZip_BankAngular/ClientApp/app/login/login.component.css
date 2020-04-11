@@ -94,7 +94,7 @@ span.ace {
 
 
 .toolbar1 img {
-    width: 5%;
+    width: 4%;
     position: absolute;
     right: 8px;
     top: 4px;
@@ -118,7 +118,7 @@ span.ace {
 
 .outer {
     background: #f1f1f1;
-    height: 252px;
+    height: 242px;
     width: 40%;
     float: right;
 }
@@ -604,7 +604,7 @@ label.text1 {
 
 .zipNachLogin .btn-primary {
     border: none;
-    padding: 3px 15px;
+    padding: 5px 15px;
 }
 
 .zipNachLogin .widget-box.visible {
