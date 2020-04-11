@@ -3453,7 +3453,7 @@ Zone.__load_patch('PromiseRejectionEvent', function (global, Zone) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Projects\Angularworkwithdesign\ASPWithAngular\ASPWithAngular\ClientApp\polyfills.ts */"./ClientApp/polyfills.ts");
+module.exports = __webpack_require__(/*! D:\VPN\QuickZip_BankAngular\QuickZip_BankAngular\ClientApp\polyfills.ts */"./ClientApp/polyfills.ts");
 
 
 /***/ })

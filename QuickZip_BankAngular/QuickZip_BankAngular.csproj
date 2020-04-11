@@ -124,8 +124,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientApp\app\app-routing.module.js" />
     <Content Include="ClientApp\app\app.component.css" />
     <Content Include="ClientApp\app\app.component.html" />
+    <Content Include="ClientApp\app\app.component.js" />
+    <Content Include="ClientApp\app\app.component.spec.js" />
+    <Content Include="ClientApp\app\app.module.js" />
+    <Content Include="ClientApp\app\footer\footer.component.css" />
+    <Content Include="ClientApp\app\footer\footer.component.html" />
+    <Content Include="ClientApp\app\header\header.component.css" />
+    <Content Include="ClientApp\app\header\header.component.html" />
+    <Content Include="ClientApp\app\login\login.component.css" />
+    <Content Include="ClientApp\app\login\login.component.html" />
+    <Content Include="ClientApp\app\master\dashboard\dashboard.component.css" />
+    <Content Include="ClientApp\app\master\dashboard\dashboard.component.html" />
+    <Content Include="ClientApp\app\master\historical-mandate\historical-mandate.component.css" />
+    <Content Include="ClientApp\app\master\historical-mandate\historical-mandate.component.html" />
+    <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.css" />
+    <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.html" />
+    <Content Include="ClientApp\app\master\user\user.component.css" />
+    <Content Include="ClientApp\app\master\user\user.component.html" />
+    <Content Include="ClientApp\app\sidebar\sidebar.component.css" />
+    <Content Include="ClientApp\app\sidebar\sidebar.component.html" />
     <Content Include="ClientApp\favicon.ico" />
     <Content Include="ClientApp\index.html" />
     <Content Include="ClientApp\karma.conf.js" />
@@ -162,16 +182,23 @@
     <Content Include="ClientApp\tsconfig.app.json" />
     <Content Include="ClientApp\tsconfig.spec.json" />
     <Content Include="ClientApp\tslint.json" />
+    <Content Include="ClientApp\app\app-routing.module.js.map" />
+    <Content Include="ClientApp\app\app.component.js.map" />
+    <Content Include="ClientApp\app\app.component.spec.js.map" />
+    <Content Include="ClientApp\app\app.module.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entity\Common.cs" />
     <Compile Include="Entity\DbSecurity.cs" />
     <Compile Include="Entity\Demo.Context.cs">
@@ -239,8 +266,26 @@
     <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\employee.ts" />
+    <TypeScriptCompile Include="ClientApp\app\footer\footer.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\footer\footer.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\header\header.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\header\header.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\nach-mandate\nach-mandate.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\nach-mandate\nach-mandate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\user\user.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\user\user.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\sidebar\sidebar.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\sidebar\sidebar.component.ts" />
     <TypeScriptCompile Include="ClientApp\environments\environment.prod.ts" />
     <TypeScriptCompile Include="ClientApp\environments\environment.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
