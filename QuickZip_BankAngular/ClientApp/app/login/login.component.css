@@ -583,12 +583,15 @@ label {
 
 .zipNachLogin .login-container {
     width: 83%;
+    margin: 10% auto;
     overflow: hidden;
 }
 
 .zipNachLogin .blue {
     color: #478FCA !important;
 }
+.loginCon {
+ margin:0 auto}
 
 label.text1 {
     display: inline-block;
@@ -824,4 +827,26 @@ a.headerRightIcon i {
 .ui-progressbar .ui-progressbar-value {
     margin: -1px !important;
     height: 111% !important;
+}
+.input-icon > .ace-icon {
+    padding: 0 4px;
+    z-index: 2;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 3px;
+    line-height: 30px;
+    display: inline-block;
+    color: #909090;
+    font-size: 14px;
+}
+.input-icon > input {
+    padding-left: 24px;
+    padding-right: 6px;
+}
+.space-6 {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 6px 0 6px;
 }
