@@ -505,7 +505,7 @@ input[type=submit] {
     text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 10px 10px rgba(255,255,255,0.1);
     border-radius: 0.3em;
-    background: #ee1c25;
+    background: #337ab7;
     color: white;
     float: right;
     font-weight: bold;
@@ -649,7 +649,7 @@ label.text1 {
     border-right: 1px solid #cdcdcd;
 }
 
-.zipNachLogin .agreebtn {
+.agreebtn {
     padding: 5px 20px;
     border: 1px solid #fff !important;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
@@ -664,16 +664,17 @@ label.text1 {
     width: 15% !important;
 }
 
-.zipNachLogin .loginbtn {
+.loginbtn {
     padding: 5px 20px;
     border: 1px solid #fff !important;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 10px 10px rgba(255,255,255,0.1);
     border-radius: 0.3em;
-    background: #ee1c25;
+    background: #1f497d;
     color: white;
     float: right;
     font-weight: bold;
+    width: 22% !important;
     cursor: pointer;
     font-size: 11px !important;
 }
@@ -765,4 +766,63 @@ a.headerRightIcon i {
 .headerRightPart {
     float: right;
     margin-left: 3px;
+}
+.ui-widget-header {
+    background: #91b1c3 !important;
+    color: #fff !important;
+}
+
+.progress-label {
+    position: absolute;
+    left: 48%;
+    font-weight: bold;
+    z-index: 9999;
+    color: #fff;
+}
+
+
+
+
+
+#zipNachlogo {
+    display: block;
+    margin: 16% auto 0;
+    width: 269px;
+}
+
+#logoYoeki {
+    position: absolute;
+    right: 1%;
+    bottom: 2%;
+    width: 130px;
+}
+
+    #logoYoeki img {
+        width: 35%;
+    }
+
+#poweredtext {
+    font-size: 13.5px;
+    font-weight: bold;
+    color: #255cac;
+}
+
+#progressbar {
+    width: 92%;
+    height: 20px;
+    margin: -13px auto;
+}
+
+.container {
+    max-width: 100% !important;
+    padding: 0px;
+}
+.loginlogo {
+    width: 66%;
+    padding-left: 16px;
+}
+
+.ui-progressbar .ui-progressbar-value {
+    margin: -1px !important;
+    height: 111% !important;
 }
