@@ -140,6 +140,8 @@
     <Content Include="ClientApp\app\master\dashboard\dashboard.component.html" />
     <Content Include="ClientApp\app\master\historical-mandate\historical-mandate.component.css" />
     <Content Include="ClientApp\app\master\historical-mandate\historical-mandate.component.html" />
+    <Content Include="ClientApp\app\master\holiday-master\holiday-master.component.css" />
+    <Content Include="ClientApp\app\master\holiday-master\holiday-master.component.html" />
     <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.css" />
     <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.html" />
     <Content Include="ClientApp\app\master\user\user.component.css" />
@@ -198,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HolidayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entity\Common.cs" />
     <Compile Include="Entity\DbSecurity.cs" />
@@ -228,6 +231,8 @@
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDataAccessLayer.cs" />
+    <Compile Include="Models\Holiday.cs" />
+    <Compile Include="Models\HolidayDataAccessLayer.cs" />
     <Compile Include="Models\ResFlag.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -255,6 +260,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Holiday\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -276,12 +282,17 @@
     <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\holiday.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\holiday-master\holiday-master.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\holiday-master\holiday-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\nach-mandate\nach-mandate.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\nach-mandate\nach-mandate.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\user\user.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\user\user.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\holiday-master.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\holiday-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\sidebar\sidebar.component.spec.ts" />

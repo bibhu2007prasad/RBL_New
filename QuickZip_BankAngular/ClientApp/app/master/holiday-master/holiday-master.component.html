@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="loading-screen-wrapper" *ngIf="loading">
+        <div class="loading-screen-icon">
+            Loading...
+        </div>
+    </div>
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Rohit Temp Demo Work</h4>
+            <p class="text-center">Get started with your free account</p>
+
+            <form [formGroup]="Holiday" autocomplete="off">
+                <div *ngIf="sucess" style="font-size: medium;font-weight: bold;color: red; " role="alert">Your Form is Valid</div>
+                <div class="form-group input-group" [ngClass]="displayFieldCss('HolidayName')">
+                   <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input required name="Holidaname" class="form-control a" formControlName="HolidaName"
+                           placeholder="Holiday Name" type="text">
+
+                </div>
+                <div class="form-group input-group" [ngClass]="displayFieldCss('Date')">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="Date" class="form-control" formControlName="Date" #Email placeholder="Dae" type="date">
+                
+                </div> 
+               
+              
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <button style="width: fit-content;" type="submit" (click)="onSubmit()" class="btn btn-primary btn-block"> Save</button> </span>
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">  <button [disabled]="buttonDisabled1" style="width: fit-content;" type="submit" (click)="deleteHoliday();" class="btn btn-primary btn-block"> Delete</button> </span>
+                    </div>
+                </div> <!-- form-group// -->
+                <!-- form-group// -->
+                <div class="form-group" *ngIf="Show">
+                    <table class="table">
+                        <thead>
+                        <th style="display: none;"></th>
+                        <th>Holiday Name</th>
+                        <th>Date</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of holiday ; index as i" (dblclick)="onRowClicked(data)" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+                                <td style="display: none;">{{data.EmpId }}</td>
+                                <td>{{data.HolidayName }}</td>
+                                <td>{{data.Date }}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+
+</div> 
