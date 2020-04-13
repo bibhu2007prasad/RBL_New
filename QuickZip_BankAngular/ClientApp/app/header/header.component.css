@@ -158,8 +158,8 @@ span.ace {
 }
 
 .navbar {
-    height: 45px;
-    background: rgb(31,73,125);
+    height: 40px;
+    background: rgb(31,73,125) !important;
 }
 
 .topper {
@@ -525,9 +525,9 @@ input[type=submit] {
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -10px 10px rgba(255,255,255,0.1);
     }
 
-.navbar {
-    background: #ee1c25;
-    height: 52px
+.zipNachlogo img {
+    width: 66%;
+    padding-left: 16px;
 }
 
 input[type=text]:hover,
@@ -564,6 +564,7 @@ label:hover ~ input[type=password] {
 ol, ul {
     padding: 0;
     margin: 0 0 1px 25px;
+    list-style:none;
 }
 
 label {
@@ -572,8 +573,15 @@ label {
     font-weight: normal;
     padding-bottom: 0;
 }
-
-.quicklogin img {
+.nav a.dropdown-toggle {
+    color: #fff !important;
+    margin-right: 8px;
+    font-size:12px
+}
+.nav li a.dropdown-toggle::after {
+    margin-top: 28px;
+}
+    .quicklogin img {
     margin-bottom: 5px;
 }
 
@@ -689,7 +697,88 @@ label.text1 {
     font-size: 15px;
     margin: 8px 4px 0 0;
 }
+.zipNachTheme .navbar {
+    min-height: 46px;
+}
 
+    .zipNachTheme .navbar a.logoright {
+        display: none
+    }
+
+.zipNachTheme .zipNachlogo {
+    display: block;
+    padding-top: 4px !important;
+    width: 189px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+    .zipNachTheme .zipNachlogo img {
+        width: 66%;
+        padding-left: 16px;
+    }
+
+.zipNachTheme .quickLeftDiv {
+    width: auto;
+    background: transparent;
+    height: 40px;
+}
+
+.zipNachTheme .navbar, .zipNachTheme .ace-nav > li.light-blue > a:focus, .zipNachTheme .ace-nav > li.light-blue > a:hover, .zipNachTheme .ace-nav > li.open.light-blue > a, .zipNachTheme .ace-nav > li.light-blue > a {
+    background: rgb(31,73,125) !important;
+}
+
+.zipNachTheme .kotakDiv {
+    display: none
+}
+
+.zipNachTheme #guide {
+    margin-top: 24%;
+}
+
+.zipNachTheme .user-info {
+    top: 27%
+}
+
+.zipNachTheme .ace-nav > li > a > .ace-icon {
+    padding: 12px 0 0 0;
+}
+
+.zipNachTheme .zipNachTxt {
+    display: inline-block;
+}
+
+.zipNachTheme .quickChk {
+    display: none
+}
+
+.zipNachTheme .blue {
+    color: #478FCA !important;
+}
+
+.zipNachTheme .nav-list > li > a {
+    background-color: #fff;
+    color: #1f497d !important;
+}
+
+.zipNachTheme span.legal {
+    font-size: 16px;
+    color: #1f497d;
+    font-style: italic;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.zipNachTheme .accordion-style1.panel-group .panel-heading .accordion-toggle {
+    background-color: #9199a2;
+}
+
+.zipNachTheme .btn-success.focus:hover, .zipNachTheme .btn-success:active:hover, .zipNachTheme .btn-success:focus:active, .zipNachTheme .btn-success:focus:hover, .zipNachTheme .btn-success:hover, .zipNachTheme .open > .btn-success.dropdown-toggle, .zipNachTheme .open > .btn-success.dropdown-toggle.focus, .zipNachTheme .open > .btn-success.dropdown-toggle:active, .zipNachTheme .open > .btn-success.dropdown-toggle:focus,
+.zipNachTheme .btn-success, .zipNachTheme .btn-success.focus, .zipNachTheme .btn-success:focus {
+    background-color: #3e5d84 !important;
+    border-color: #3e5d84;
+}
 #navbar1 {
     height: 45px !important;
     background: rgb(31,73,125) !important;
@@ -768,4 +857,31 @@ a.headerRightIcon i {
 .headerRightPart {
     float: right;
     margin-left: 3px;
+}
+.bellicon {
+    font-size: 17px;
+    color: #fff;
+    margin-top: 20px;
+    margin-right: 11px;
+}
+#guide {
+    display:contents;
+    color: #fff;
+    list-style: none;
+    margin-top: 31%;
+    margin-right: 0%;
+    cursor: pointer;
+}
+.user-info {
+    min-width: 49px;
+    max-width: 172px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+    line-height: 35px;
+    position: relative;
+
 }

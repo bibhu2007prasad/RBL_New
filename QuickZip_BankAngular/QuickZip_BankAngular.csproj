@@ -151,6 +151,7 @@
     <Content Include="ClientApp\assets\css\ace.min.css" />
     <Content Include="ClientApp\assets\css\bootstrap.min.css" />
     <Content Include="ClientApp\assets\css\font-awesome.min.css" />
+    <Content Include="ClientApp\assets\css\style.css" />
     <Content Include="ClientApp\assets\images\2.jpg" />
     <Content Include="ClientApp\assets\images\68747470733a2f2f732d6d65646.png" />
     <Content Include="ClientApp\assets\images\auth.jpg" />
