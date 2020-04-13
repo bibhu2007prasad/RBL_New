@@ -10622,6 +10622,7 @@ input[type=time],
 input[type=week],
 input[type=number],
 textarea {
+
     border-radius: 0 !important;
     color: #858585;
     background-color: #FFF;
