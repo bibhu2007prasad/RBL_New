@@ -8,7 +8,6 @@ var LoginComponent = /** @class */ (function () {
         this.formBuilder = formBuilder;
     }
     LoginComponent.prototype.ngOnInit = function () {
-        debugger;
         this.href1 = this.router.url;
         this.LoginForm = this.formBuilder.group({
             UserName: ['', Validators.required],
@@ -17,8 +16,6 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.onSubmit = function () {
         this.router.navigate(['/dashboard']);
-        //debugger;
-        //alert('login click');
     };
     LoginComponent = tslib_1.__decorate([
         Component({

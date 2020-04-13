@@ -1,25 +1,4 @@
-<!--<div id="navbar" class="navbar navbar-default ace-save-state" style="display: block">
-    <div class="quickLeftDiv">
-        <div class="navbar-container ace-save-state" id="navbar-container">
-            <div class="navbar-header pull-left">
-                <a href="#" class="navbar-brand">
-                    <img src="../../ClientApp/assets/images/quickcheck1.png" style="width: 100%;">
 
-
-                </a>
-
-            </div>
-        </div>
-    </div>
-    <div class="quickrightDiv">
-        <div>
-            <img src="../../ClientApp/assets/images/kotak-bank-logo.png" />
-        </div>
-        <div class="navbar-buttons navbar-header pull-right adminddl" role="navigation">
-        </div>
-
-    </div>
-</div>-->
 <div id="navbar1" class="navbar navbar-default ace-save-state">
     <div class="navbar-container ace-save-state" id="navbar-container1">
         <div class="navbar-header pull-left">
@@ -31,18 +10,8 @@
     </div>
 </div>
 <form [formGroup]="LoginForm" class="form" style="display: block">
-
-    <!--<div class="quicklogin" style="text-align: center;">
-        <img src="../../ClientApp/assets/images/quickcheck.png" />
-
-    </div>
-
-    <div class="clearfix">
-    </div>-->
-
-
     <div class="zipNachLogin" id="divzipnach">
-        <div class="inset">
+        
             <div class="col-sm-10 col-md-10 loginCon">
               
                 <div class="login-container">
@@ -65,7 +34,7 @@
                                     <div class="space-6">
                                     </div>
 
-                                    <fieldset>
+                                    <div class="inset">
                                         <label class="block clearfix position-relative">
                                             <span class="block input-icon input-icon-right">
                                                 <input name="UserName" type="text" class="form-control" formControlName="UserName" placeholder="Username" />
@@ -92,14 +61,56 @@
                                         <div class="clearfix">
                                             <input type="submit" value="Login" (click)="onSubmit()" class="pull-right btn btn-sm btn-primary loginbtn">
                                         </div>
-                                        <div class="space-6">
-                                        </div>
-                                    </fieldset>
+
+                                    </div>
 
                                 </div>
 
                             </div>
 
+                        </div>
+                        <div id="forgot-box1" class="forgot-box visible widget-box no-border" style="display:none">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="ace-icon fa fa-key"></i>
+                                        <label class="text1">
+                                            Retrieve Password
+                                        </label>
+                                    </h4>
+                                    <div class="space-6">
+                                    </div>
+                                  
+                                    <div class="inset">
+                                        <p>
+                                            Enter your email
+                                        </p>
+
+                                        <div>
+                                            <label class="block clearfix position-relative">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input name="Email" type="text" class="form-control " placeholder="Email" />
+
+                                                    <i class="ace-icon fa fa-envelope"></i>
+                                                    <div class="ace-icon toolbar2 clearfix">
+                                                        <div class="col-md-offset-3">
+                                                            <a href="#" data-target="#login-box1" class="forgot-password-link" id="loginPage">
+                                                                <i class="ace-icon pull-right fa fa-home"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </label>
+
+                                            <div class="clearfix">
+                                                <input type="submit" value="Agree" class="pull-right btn btn-sm btn-primary loginbtn">
+                                            </div>
+                                        </div>
+                                        <div class="space-6">
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
                         </div>
                         <div class="outer">
                             <p class="inner-content">
@@ -117,29 +128,9 @@
 
 
             </div>
-            
-    </div>
+   
     </div>
 
-
-    <!--<div id="forgot-box" style="display: none">
-        <h1>
-            Retrieve Password
-        </h1>
-        <div class="inset">
-            <p style="margin-top: 8%">
-                <label for="password">
-                    Email
-                </label>
-                <input name="Email" type="text" class="form-control "
-                        placeholder="Email" />
-            </p>
-            <input type="submit"  value="Agree" class="loginbtn">
-        </div>
-        <p class="p-container">
-            <span id="logbtn" style="cursor: pointer">Login</span>
-        </p>
-    </div>-->
 
 
 </form>

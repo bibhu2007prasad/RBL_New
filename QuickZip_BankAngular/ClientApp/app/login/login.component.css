@@ -58,6 +58,7 @@ h4 {
 
 .login-container {
     margin-top: 10%;
+    background: #f1f1f1;
 }
 
 .login-box .toolbar {
@@ -130,7 +131,8 @@ span.ace {
     background-color: none;
 }
 
-
+.fa-home {position:absolute; right:0px
+}
 .inner {
     background: #f1f1f1;
     height: 185px;

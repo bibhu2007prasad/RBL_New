@@ -28,9 +28,10 @@ var HolidayMasterComponent = /** @class */ (function () {
         this.allHolidays = this.holidayService.getAllHoliday();
     };
     HolidayMasterComponent.prototype.onFormSubmit = function () {
+        debugger;
         this.dataSaved = false;
-        var employee = this.holidayForm.value;
-        this.CreateHoliday(this.holiday);
+        var holiday = this.holidayForm.value;
+        this.CreateHoliday(holiday);
         this.holidayForm.reset();
     };
     //loadHolidayToEdit(holidayId: string) {
