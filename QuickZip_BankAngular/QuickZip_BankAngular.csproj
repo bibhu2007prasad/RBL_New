@@ -273,6 +273,16 @@
       <DependentUpon>Demo.edmx</DependentUpon>
       <LastGenOutput>Demo.cs</LastGenOutput>
     </Content>
+    <Content Include="Entity\Demo2_ZipNach_RBLBank_Angular.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.edmx</DependentUpon>
+      <LastGenOutput>Demo2_ZipNach_RBLBank_Angular.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\Demo2_ZipNach_RBLBank_Angular.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.edmx</DependentUpon>
+      <LastGenOutput>Demo2_ZipNach_RBLBank_Angular.cs</LastGenOutput>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -295,6 +305,13 @@
     <Content Include="ClientApp\app\app.component.spec.js.map" />
     <Content Include="ClientApp\app\app.module.js.map" />
     <Content Include="ClientApp\assets\images\vssver.scc" />
+    <EntityDeploy Include="Entity\Demo2_ZipNach_RBLBank_Angular.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Demo2_ZipNach_RBLBank_Angular.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entity\Demo2_ZipNach_RBLBank_Angular.edmx.diagram">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -309,6 +326,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HolidayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Entity\Common.cs" />
     <Compile Include="Entity\DbSecurity.cs" />
     <Compile Include="Entity\Demo.Context.cs">
@@ -326,20 +344,624 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Demo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Demo2_ZipNach_RBLBank_Angular.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Demo2_ZipNach_RBLBank_Angular.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Demo2_ZipNach_RBLBank_Angular.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetEntityID1_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetEntityID_bkp_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetEntityID_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetMandateStatus_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetYears_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Global.cs" />
+    <Compile Include="Entity\mirror_tbl_links.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\parseJSON_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Proc_BulkUploadImages_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\spGetAllEmployees_Result.cs">
       <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Split_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_BankBulkUpload_bkp_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_BankBulkUpload_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_BankMaster_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_BankUpdatedDetails_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_BranchCreation_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_Physical_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_ChargeMaster_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_CollectionStatus_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_CreatePresenmentFile_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Dashboard_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_DownloadMandate_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_ENach_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Entity_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_ESign_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_FinalDashbaord_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_GeneraateMandateRegFile_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_GenerateZipFromService_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_GetDashBoardData_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_GetEmailData_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Home_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_LinkSetup_AccessRights_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_MandateDetails_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MandateDirectDebit_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MandateHistory_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MandateReport_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Mandate_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MobileUploadImageName_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_OTP_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_Payment_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_PostmandateStatus_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Presenment_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_PSMMaster_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_QbackRequest_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_Report_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_RMMaster_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_SelectForChangeRefrence_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_SelectForPhysical_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_UMRNPresentment_OnUs_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_UMRNPresentment_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_UpdateFileStatus_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Uploaddata1_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Uploaddata_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_UserLogin_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_user_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_WebSevice_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_WindowsService_Result.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\t1.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblAccessRight.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblAccessrights_Temp.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblAddressMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblAlertNotification.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblAllBulkMandate.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblBankBulkUploadData.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblBankBulkUploadData_Filter.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblbankData.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBankHeader.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBankIMP.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBankTransAmount.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBranch.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblBranchMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBranchUser.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBulkUserUploadCheck.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblBusinessSegment.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblChargeMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblChargeTypeMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCity.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblclientData.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblCommunicationMail_Billing.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblConsent.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCountry.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCustomer.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCustomerCardDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblDateFormat.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblDesignation.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblDocumentTypeMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\tblEmployee.cs">
       <DependentUpon>Demo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TblEmployeeMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntity.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityBankSetup.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityBankSetupDate.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityBusinessCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityCategoryCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityContactPersonDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityDebitType.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblEntityFinancialDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityFrequency.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblEntityH2HDetails.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblEntityMandateMode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityPaymentMode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityPeriondEnableOn.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntitySponsorcodeFileName.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityTodebit.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntitywiseDocument.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblErrorCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignErrorMandateLog.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignLogMessageId.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignRequest.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignResponse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblExlUploadedData.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblExlUploadedDataHeader.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblExlUploadedData_BulkTest.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblFileFormat.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblFileNumberSequence.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLFILESEQUENCE.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblHeadBankMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblHeadBank_AddressDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblHolidayMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblIFSCBank.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblImageActivity.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblImageActivityDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblInCompleteMandate.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLegacyDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLegacyHeader.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLegacyUploaded.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblLoginSessionTrxn.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tbllogMandate.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tbllogMandateDirectDebit.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLogoImage.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLogoImage1.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLogTransaction.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblMailMsgTransaction.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandate.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateActivity.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateAdhar.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateBankBulkUploadHistory.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateDirectDebit.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateDirectdebitUniqueId.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateFile.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateMobile.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateStatu.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateTransaction.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateUniqueId.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandate_Reverse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMergedData.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMobileUserLogin.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMsgMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMsgTransaction.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblNPCIResponse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblNPCIResponse_RBL.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblNPCIResponse_Reg.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPaymentMode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPaymentRequest.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPaymentResponse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentDetailSeqCount.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentMaker.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentResponseDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentResponseHeader.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentSeqcount.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblPSMManager.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackActivity.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackLogPaymentResponse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackPaymentRequest.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackPaymentResponse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblReasonCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblRecipientMailId.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblRedirectURL.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblRegionalManager.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblRegionMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblReportMapDB.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblReturnRegionMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblRoleDivision.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblRoleMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblRolePolicy.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblServiceLog.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblSettlementType.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblSponsorBankCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblSponsorBankCodeDetail.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblsponsorbankcode_Temp.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblState.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblStatusMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTempIFSCBank.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTempletMaster.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTransactionPresentment.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTransactionPresentmentHistory.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTransPresentmentHeader.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserLogin.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserPaymentMode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserSponsorBankCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserUtilityCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUtlityCode.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblYoekiResponse.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Icon.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Links.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tbl_MSG91_DeliveryReport.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwKotakBillingReport.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwMandateLastTransaction.cs">
+      <DependentUpon>Demo2_ZipNach_RBLBank_Angular.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDataAccessLayer.cs" />
     <Compile Include="Models\Holiday.cs" />
     <Compile Include="Models\HolidayDataAccessLayer.cs" />
+    <Compile Include="Models\Login\Login.cs" />
+    <Compile Include="Models\Login\Logindetails.cs" />
+    <Compile Include="Models\Login\SaveLoginSessionTrxn.cs" />
     <Compile Include="Models\ResFlag.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -368,6 +990,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Holiday\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -396,6 +1019,7 @@
     <TypeScriptCompile Include="ClientApp\app\master\nach-mandate\nach-mandate.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\user\user.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\user\user.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Login\logindetails.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\holiday-master.service.spec.ts" />

@@ -1,21 +1,91 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { LoginServiceService } from '../Services/login-service.service';
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(router, formBuilder) {
+    function LoginComponent(router, formBuilder, _loginService) {
         this.router = router;
         this.formBuilder = formBuilder;
+        this._loginService = _loginService;
+        this.submitted = true;
+        this.Isverified = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
+        sessionStorage.clear();
         this.href1 = this.router.url;
         this.LoginForm = this.formBuilder.group({
-            UserName: ['', Validators.required],
-            Password: ['', Validators.required]
+            UserName: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+            Password: ['', Validators.required],
+            Email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
         });
     };
+    Object.defineProperty(LoginComponent.prototype, "AllFields", {
+        get: function () { return this.LoginForm.controls; },
+        enumerable: true,
+        configurable: true
+    });
+    LoginComponent.prototype.Removelabel = function () { this.errormsg = ''; };
+    LoginComponent.prototype.displayFieldCss = function (field) {
+        return {
+            'validate': this.isFieldValid(field),
+        };
+    };
+    LoginComponent.prototype.isFieldValid = function (field) {
+        return !this.LoginForm.get(field).valid && this.LoginForm.get(field).touched;
+    };
     LoginComponent.prototype.onSubmit = function () {
-        this.router.navigate(['/dashboard']);
+        var _this = this;
+        var emailid = this.LoginForm.get('Email');
+        emailid.clearValidators();
+        emailid.updateValueAndValidity();
+        if (this.LoginForm.valid) {
+            this._loginService.GetLogin(this.AllFields.UserName.value, this.AllFields.Password.value).subscribe(function (data) {
+                _this.login = data;
+                if (data[0].Flag == "0") {
+                    _this.errormsg = data[0].FlagValue;
+                }
+                else {
+                    sessionStorage.setItem('User', JSON.stringify(data[0]));
+                    var item = JSON.parse(sessionStorage.getItem('User'));
+                    //console.log(item.UserId);
+                    _this.router.navigate(['/dashboard']);
+                }
+            });
+        }
+        else {
+            this.validateAllFormFields(this.LoginForm);
+        }
+    };
+    LoginComponent.prototype.Show = function () {
+        this.submitted = false;
+        this.Isverified = true;
+    };
+    LoginComponent.prototype.onAgree = function () {
+        var username = this.LoginForm.get('UserName');
+        var password = this.LoginForm.get('Password');
+        username.clearValidators();
+        username.updateValueAndValidity();
+        password.clearValidators();
+        password.updateValueAndValidity();
+        if (this.LoginForm.valid) {
+            this.router.navigate(['/user']);
+        }
+        else {
+            this.validateAllFormFields(this.LoginForm);
+        }
+    };
+    LoginComponent.prototype.validateAllFormFields = function (formGroup) {
+        var _this = this;
+        Object.keys(formGroup.controls).forEach(function (field) {
+            var control = formGroup.get(field);
+            if (control instanceof FormControl) {
+                control.markAsTouched({ onlySelf: true });
+            }
+            else if (control instanceof FormGroup) {
+                _this.validateAllFormFields(control);
+            }
+        });
     };
     LoginComponent = tslib_1.__decorate([
         Component({
@@ -23,7 +93,7 @@ var LoginComponent = /** @class */ (function () {
             templateUrl: './login.component.html',
             styleUrls: ['./login.component.css']
         }),
-        tslib_1.__metadata("design:paramtypes", [Router, FormBuilder])
+        tslib_1.__metadata("design:paramtypes", [Router, FormBuilder, LoginServiceService])
     ], LoginComponent);
     return LoginComponent;
 }());

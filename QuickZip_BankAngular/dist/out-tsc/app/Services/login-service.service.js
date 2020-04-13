@@ -8,6 +8,9 @@ var LoginServiceService = /** @class */ (function () {
         this.baseUrl = "";
         this.baseUrl = myAppUrl;
     }
+    LoginServiceService.prototype.GetLogin = function (Username, Password) {
+        return this._http.get(this.baseUrl + 'api/Login/getlogindetails/' + Username + '/' + Password);
+    };
     LoginServiceService.prototype.errorHandler = function (error) {
         console.log(error);
         return Observable.throw(error);

@@ -34,6 +34,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CommonModule } from '@angular/common';
+
+import { LoginServiceService } from './Services/login-service.service';
+
 @NgModule({
   declarations: [
       AppComponent
@@ -41,46 +45,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HistoricalMandateComponent, HolidayMasterComponent
   ],
     imports: [
-        HttpClientModule,        
-    BrowserModule,
-      AppRoutingModule,
-      FormsModule,
-        ReactiveFormsModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-      MatButtonModule,
-      MatMenuModule,
-      MatDatepickerModule,
-      
-      MatIconModule,
-      MatRadioModule,
-      MatCardModule,
-      MatSidenavModule,
-      
-      MatInputModule,
-      MatTooltipModule,
-        MatToolbarModule, BrowserAnimationsModule,
-  ],
-    providers: [HttpClientModule,
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatButtonModule,
-        MatMenuModule,
-        MatDatepickerModule,
-
-        MatIconModule,
-        MatRadioModule,
-        MatCardModule,
-        MatSidenavModule,
-
-        MatInputModule,
-        MatTooltipModule,
-        MatToolbarModule, BrowserAnimationsModule],
+        CommonModule,
+        HttpClientModule
+  ],
+    providers: [LoginServiceService, { provide: 'BASE_URL', useFactory: getBaseUrl }],
 
     bootstrap: [AppComponent]  
 })
 export class AppModule { }
+export function getBaseUrl() {
+    return document.getElementsByTagName('base')[0].href;
+}

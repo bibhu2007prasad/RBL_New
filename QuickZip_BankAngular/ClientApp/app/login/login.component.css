@@ -130,6 +130,10 @@ span.ace {
     background-color: none;
 }
 
+.fa-home {
+    position: absolute;
+    right: 0px
+}
 
 .inner {
     background: #f1f1f1;
@@ -591,8 +595,10 @@ label {
 .zipNachLogin .blue {
     color: #478FCA !important;
 }
+
 .loginCon {
- margin:0 auto}
+    margin: 0 auto
+}
 
 label.text1 {
     display: inline-block;
@@ -628,7 +634,7 @@ label.text1 {
     z-index: -5;
     border-bottom: none;
     box-shadow: none;
-      /* background-color: #394557; */
+    /* background-color: #394557; */
     -moz-transform: scale(0,1) translate(-150px);
     -webkit-transform: scale(0,1) translate(-150px);
     -o-transform: scale(0,1) translate(-150px);
@@ -770,6 +776,7 @@ a.headerRightIcon i {
     float: right;
     margin-left: 3px;
 }
+
 .ui-widget-header {
     background: #91b1c3 !important;
     color: #fff !important;
@@ -820,6 +827,7 @@ a.headerRightIcon i {
     max-width: 100% !important;
     padding: 0px;
 }
+
 .loginlogo {
     width: 66%;
     padding-left: 16px;
@@ -829,6 +837,7 @@ a.headerRightIcon i {
     margin: -1px !important;
     height: 111% !important;
 }
+
 .input-icon > .ace-icon {
     padding: 0 4px;
     z-index: 2;
@@ -841,10 +850,12 @@ a.headerRightIcon i {
     color: #909090;
     font-size: 14px;
 }
+
 .input-icon > input {
     padding-left: 24px;
     padding-right: 6px;
 }
+
 .space-6 {
     max-height: 1px;
     min-height: 1px;
