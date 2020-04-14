@@ -15,17 +15,6 @@ import { HistoricalMandateComponent } from './master/historical-mandate/historic
 import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component';
 import { RegionMasterComponent } from './master/region-master/region-master.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatInputModule } from '@angular/material/input';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { EmployeeMasterComponent } from './master/employee-master/employee-master.component';
@@ -46,36 +35,14 @@ var AppModule = /** @class */ (function () {
                 AppRoutingModule,
                 FormsModule,
                 ReactiveFormsModule,
-                MatDatepickerModule,
-                MatNativeDateModule,
-                MatButtonModule,
-                MatMenuModule,
-                MatDatepickerModule,
-                MatIconModule,
-                MatRadioModule,
-                MatCardModule,
-                MatSidenavModule,
-                MatInputModule,
-                MatTooltipModule,
-                MatToolbarModule, BrowserAnimationsModule,
+                BrowserAnimationsModule,
             ],
             providers: [HttpClientModule,
                 BrowserModule,
                 AppRoutingModule,
                 FormsModule,
                 ReactiveFormsModule,
-                MatDatepickerModule,
-                MatNativeDateModule,
-                MatButtonModule,
-                MatMenuModule,
-                MatDatepickerModule,
-                MatIconModule,
-                MatRadioModule,
-                MatCardModule,
-                MatSidenavModule,
-                MatInputModule,
-                MatTooltipModule,
-                MatToolbarModule, BrowserAnimationsModule],
+                BrowserAnimationsModule],
             bootstrap: [AppComponent]
         })
     ], AppModule);

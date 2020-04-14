@@ -385,7 +385,6 @@
     <TypeScriptCompile Include="ClientApp\app\app.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
-    <TypeScriptCompile Include="ClientApp\app\employee.ts" />
     <TypeScriptCompile Include="ClientApp\app\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\footer\footer.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\header\header.component.spec.ts" />
