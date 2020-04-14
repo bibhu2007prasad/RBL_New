@@ -24,6 +24,10 @@ tr:nth-child(even) {
         border: 1px solid #dddddd;
         padding:3px 3px;
     }
+select.dropdown{
+    height: 22px !important;
+    font-size: 11px !important;
+}
 .no-padding {
 padding:0px !important}
 .boxhead {

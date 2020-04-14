@@ -11,7 +11,8 @@ import { UserComponent } from './master/user/user.component';
 import { DashboardComponent } from './master/dashboard/dashboard.component';
 import { NachMandateComponent } from './master/nach-mandate/nach-mandate.component';
 import { HistoricalMandateComponent } from './master/historical-mandate/historical-mandate.component';
-import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component';
+import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component'; 
+import { RegionMasterComponent } from './master/region-master/region-master.component';
 import { HolidayMasterService } from './Services/holiday-master.service'; 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatRadioModule } from '@angular/material/radio';  
@@ -33,12 +34,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { EmployeeMasterComponent } from './master/employee-master/employee-master.component';
+import { DesignationMasterComponent } from './master/designation-master/designation-master.component';
+
 
 @NgModule({
   declarations: [
       AppComponent
       , LoginComponent
-      , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HistoricalMandateComponent, HolidayMasterComponent
+      , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HistoricalMandateComponent, HolidayMasterComponent, RegionMasterComponent, EmployeeMasterComponent, DesignationMasterComponent
   ],
     imports: [
         HttpClientModule,        
@@ -60,6 +65,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       MatInputModule,
       MatTooltipModule,
         MatToolbarModule, BrowserAnimationsModule,
+        //NgMultiSelectDropDownModule
+        //NgMultiSelectDropDownModule.forRoot()
   ],
     providers: [HttpClientModule,
         BrowserModule,
