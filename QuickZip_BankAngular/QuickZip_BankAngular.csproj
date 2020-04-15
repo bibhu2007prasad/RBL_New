@@ -50,7 +50,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>C:\Users\YOEKI-10\Desktop\Encryption.dll</HintPath>
+      <HintPath>C:\Users\AMYDEV02\Desktop\DLL\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -136,18 +136,20 @@
     <Content Include="ClientApp\app\header\header.component.html" />
     <Content Include="ClientApp\app\login\login.component.css" />
     <Content Include="ClientApp\app\login\login.component.html" />
+    <Content Include="ClientApp\app\master\allumrn\allumrn.component.css" />
+    <Content Include="ClientApp\app\master\allumrn\allumrn.component.html" />
     <Content Include="ClientApp\app\master\dashboard\dashboard.component.css" />
     <Content Include="ClientApp\app\master\dashboard\dashboard.component.html" />
     <Content Include="ClientApp\app\master\designation-master\designation-master.component.css" />
     <Content Include="ClientApp\app\master\designation-master\designation-master.component.html" />
     <Content Include="ClientApp\app\master\employee-master\employee-master.component.css" />
     <Content Include="ClientApp\app\master\employee-master\employee-master.component.html" />
-    <Content Include="ClientApp\app\master\historical-mandate\historical-mandate.component.css" />
-    <Content Include="ClientApp\app\master\historical-mandate\historical-mandate.component.html" />
     <Content Include="ClientApp\app\master\holiday-master\holiday-master.component.css" />
     <Content Include="ClientApp\app\master\holiday-master\holiday-master.component.html" />
     <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.css" />
     <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.html" />
+    <Content Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.css" />
+    <Content Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.html" />
     <Content Include="ClientApp\app\master\region-master\region-master.component.css" />
     <Content Include="ClientApp\app\master\region-master\region-master.component.html" />
     <Content Include="ClientApp\app\master\user\user.component.css" />
@@ -1015,14 +1017,16 @@
     <TypeScriptCompile Include="ClientApp\app\header\header.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\login\login.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\allumrn\allumrn.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\allumrn\allumrn.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\designation-master\designation-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\designation-master\designation-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\employee-master\employee-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\employee-master\employee-master.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.spec.ts" />
-    <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\region-master\region-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\region-master\region-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Holiday\holiday.ts" />
