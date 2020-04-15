@@ -958,7 +958,7 @@
     <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDataAccessLayer.cs" />
-    <Compile Include="Models\Holiday.cs" />
+    <Compile Include="Models\Holiday\Holiday.cs" />
     <Compile Include="Models\HolidayDataAccessLayer.cs" />
     <Compile Include="Models\Login\Login.cs" />
     <Compile Include="Models\Login\Logindetails.cs" />
@@ -1013,7 +1013,7 @@
     <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\historical-mandate\historical-mandate.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\holiday.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Holiday\holiday.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\holiday-master\holiday-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\holiday-master\holiday-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\nach-mandate\nach-mandate.component.spec.ts" />

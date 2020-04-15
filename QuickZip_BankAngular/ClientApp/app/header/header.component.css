@@ -8,6 +8,7 @@ body {
     width: 190px;
     float: left;
 }
+
 .logout {
     color: #ffffff !important;
     position: absolute;
@@ -564,7 +565,7 @@ label:hover ~ input[type=password] {
 ol, ul {
     padding: 0;
     margin: 0 0 1px 25px;
-    list-style:none;
+    list-style: none;
 }
 
 label {
@@ -573,15 +574,18 @@ label {
     font-weight: normal;
     padding-bottom: 0;
 }
+
 .nav a.dropdown-toggle {
     color: #fff !important;
     margin-right: 8px;
-    font-size:12px
+    font-size: 12px
 }
+
 .nav li a.dropdown-toggle::after {
     margin-top: 28px;
 }
-    .quicklogin img {
+
+.quicklogin img {
     margin-bottom: 5px;
 }
 
@@ -697,6 +701,7 @@ label.text1 {
     font-size: 15px;
     margin: 8px 4px 0 0;
 }
+
 .zipNachTheme .navbar {
     min-height: 46px;
 }
@@ -779,6 +784,7 @@ label.text1 {
     background-color: #3e5d84 !important;
     border-color: #3e5d84;
 }
+
 #navbar1 {
     height: 45px !important;
     background: rgb(31,73,125) !important;
@@ -858,20 +864,23 @@ a.headerRightIcon i {
     float: right;
     margin-left: 3px;
 }
+
 .bellicon {
     font-size: 17px;
     color: #fff;
     margin-top: 20px;
     margin-right: 11px;
 }
+
 #guide {
-    display:contents;
+    display: contents;
     color: #fff;
     list-style: none;
     margin-top: 31%;
     margin-right: 0%;
     cursor: pointer;
 }
+
 .user-info {
     min-width: 49px;
     max-width: 172px;
@@ -883,5 +892,4 @@ a.headerRightIcon i {
     vertical-align: top;
     line-height: 35px;
     position: relative;
-
 }

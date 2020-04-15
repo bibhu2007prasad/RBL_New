@@ -1,173 +1,160 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Holiday } from '../../models/holiday/holiday';
 import { HolidayMasterService } from 'ClientApp/app/Services/holiday-master.service';
 var HolidayMasterComponent = /** @class */ (function () {
-    //  public selectUsers(event: any, user: any) {
-    //    debugger;
-    //   user.flag = !user.flag;
-    //  }
-    function HolidayMasterComponent(formbulider, holidayService) {
+    function HolidayMasterComponent(formbulider, _holidayService) {
         this.formbulider = formbulider;
-        this.holidayService = holidayService;
-        this.dataSaved = false;
-        this.holidayIdUpdate = null;
-        // EmpId:string;
-        this.buttonDisable = true;
-        this.rowSelected = false;
+        this._holidayService = _holidayService;
+        this.Emplist = [];
+        this.buttonDisabledReset = true;
+        this.buttonDisabledDelete = true;
+        this.submitted = false;
+        this.sucess = false;
+        this.Show = true;
+        this.Temp = 1;
+        this.Userid = 0;
+        this.loading = false;
+        debugger;
+        this.holiday = new Holiday();
+        this.holiday.dataList = [];
     }
     HolidayMasterComponent.prototype.ngOnInit = function () {
         // debugger;
-        this.holidayForm = this.formbulider.group({
+        this.HolidayForm = this.formbulider.group({
             HolidayName: ['', [Validators.required]],
             Date: ['', [Validators.required]],
         });
+        this.setClickedRow = function (index) {
+            this.selectedRow = index;
+        };
+        // this.AllEmployee();
         this.loadAllHolidays();
     };
+    HolidayMasterComponent.prototype.isFieldValid = function (field) {
+        return this.HolidayForm.get(field).touched;
+    };
+    HolidayMasterComponent.prototype.displayFieldCss = function (field) {
+        return {
+            'validate': this.isFieldValid(field),
+        };
+    };
     HolidayMasterComponent.prototype.loadAllHolidays = function () {
-        this.allHolidays = this.holidayService.getAllHoliday();
-    };
-    HolidayMasterComponent.prototype.onFormSubmit = function () {
         debugger;
-        this.dataSaved = false;
-        var holiday = this.holidayForm.value;
-        this.CreateHoliday(holiday);
-        this.holidayForm.reset();
+        this.loading = true;
+        var currentContext = this;
+        this._holidayService.getHolidays().
+            subscribe(function (data) {
+            currentContext.holiday.dataList = data.Table;
+        });
+        // console.log(sessionStorage.getItem('ID'));
+        this.loading = false;
     };
-    //loadHolidayToEdit(holidayId: string) {
-    //    this.buttonDisable = false;
-    //    //debugger; 
-    //    this.holidayService.getHolidayById(holidayId).subscribe(holiday => {
-    //        this.massage = null;
-    //        this.dataSaved = false;
-    //        this.holidayId = holiday.HolidayId;
-    //        this.holidayForm.controls['HolidayName'].setValue(holiday.HolidayName);
-    //        this.holidayForm.controls['DateOfBirth'].setValue(holiday.Date);
-    //       });
-    //}
-    HolidayMasterComponent.prototype.CreateHoliday = function (holiday) {
+    HolidayMasterComponent.prototype.ResetHoliday = function () {
+        this.HolidayForm.reset();
+        this.buttonDisabledReset = true;
+        this.buttonDisabledDelete = true;
+        this.submitted = false;
+        this.sucess = false;
+        this.Show = true;
+        this.Temp = 1;
+        this.Userid = 0;
+        this.loading = false;
+        this.message = null;
+    };
+    HolidayMasterComponent.prototype.SaveHoliday = function () {
         var _this = this;
-        if (this.holidayIdUpdate == null) {
-            this.holidayService.SaveEmployee(holiday).subscribe(function () {
-                _this.dataSaved = true;
+        debugger;
+        this._holidayService.SaveHoliday(JSON.stringify(this.HolidayForm.value)).subscribe(function (data) {
+            _this.holiday = data;
+            if (_this.holiday.Flag = 1) {
+                sessionStorage.setItem('ID', _this.holiday.Flag.toString());
                 _this.message = 'Record saved Successfully';
+                alert(_this.message);
+            }
+            else {
+                _this.message = 'Invalid Credential';
+                alert(_this.message);
+            }
+            _this.HolidayForm.reset();
+            _this.loadAllHolidays();
+        });
+    };
+    HolidayMasterComponent.prototype.onRowClicked = function (data) {
+        var Currentrowid = this.HolidayForm.value;
+        this.Userid = data.HolidayID;
+        this.HolidayForm.controls['HolidayName'].setValue(data.HolidayName);
+        this.HolidayForm.controls['Date'].setValue(data.HolidayDate);
+        this.buttonDisabledDelete = false;
+        this.buttonDisabledReset = false;
+        this.Temp = 2;
+    };
+    HolidayMasterComponent.prototype.DeleteHoliday = function () {
+        var _this = this;
+        this._holidayService.DeleteHoliday(this.Userid).subscribe(function () {
+            if (_this.holiday.Flag = 1) {
+                _this.message = 'Record deleted Successfully';
+                alert(_this.message);
                 _this.loadAllHolidays();
-                _this.holidayIdUpdate = null;
-                _this.buttonDisable = true;
-                _this.holidayForm.reset();
-            });
+                _this.HolidayForm.reset();
+                _this.buttonDisabledDelete = true;
+                _this.buttonDisabledReset = true;
+            }
+            else {
+                _this.message = 'Invalid Credential';
+                alert(_this.message);
+            }
+        });
+    };
+    HolidayMasterComponent.prototype.UpdateHoliday = function () {
+        var _this = this;
+        this._holidayService.UpdateHoliday(JSON.stringify(this.HolidayForm.value), this.Userid).subscribe(function (data) {
+            if (_this.holiday.Flag = 1) {
+                _this.message = 'Record updated Successfully';
+                alert(_this.message);
+                _this.loadAllHolidays();
+                _this.buttonDisabledDelete = true;
+                _this.buttonDisabledReset = true;
+            }
+            else {
+                _this.message = 'Invalid Credential';
+                alert(_this.message);
+            }
+            _this.holiday = data;
+            _this.Emplist = _this.holiday.dataList;
+            _this.HolidayForm.reset();
+        });
+    };
+    HolidayMasterComponent.prototype.onSubmit = function () {
+        debugger;
+        //alert('OnSubmi Clicked');
+        this.submitted = true;
+        if (this.HolidayForm.valid) {
+            //this.sucess=true;
+            var datat = this.HolidayForm.value;
+            if (this.Temp == 1) {
+                this.SaveHoliday();
+            }
+            else {
+                this.UpdateHoliday();
+            }
         }
-        //CreateHoliday(holiday: Holiday) {
-        //    if (this.holidayIdUpdate == null) {
-        //        this.holidayService.createHoliday(holiday).subscribe(
-        //            () => {
-        //                this.dataSaved = true;
-        //                this.message = 'Record saved Successfully';
-        //                this.loadAllHolidays();
-        //                this.holidayIdUpdate = null;
-        //                this.buttonDisable = true;
-        //                this.holidayForm.reset();
-        //            }
-        //        );
-        //    } else {
-        //        holiday.HolidayId = this.holidayIdUpdate;
-        //        //this.holidayService.updateHoliday(holiday).subscribe(() => {
-        //        //    this.dataSaved = true;
-        //        //    this.massage = 'Record Updated Successfully';
-        //        //    this.loadAllHolidays();
-        //        //    this.holidayIdUpdate = null;
-        //        //    this.buttonDisable = true;
-        //        //    this.holidayForm.reset();
-        //        //});
-        //        this.holidayService.updateItem(JSON.stringify(this.holidayForm.value), this.Userid).subscribe(
-        //            (data) => {
-        //                if (this.holiday.Flag = 1) {
-        //                    this.message = 'Record updated Successfully';
-        //                    alert(this.message);
-        //                    this.loadAllHolidays();
-        //                    this.buttonDisabled1 = true;
-        //                }
-        //                else {
-        //                    this.message = 'Invalid Credential';
-        //                    alert(this.massage);
-        //                }
-        //                this.holiday = data;
-        //                this.Emplist = this.holiday.dataList;
-        //            }
-        //        )
-        //    }
-        //}
-        //// deleteEmployee(employeeId: string) {  
-        //     //alert(this.holidayIdUpdate);
-        //     if (confirm("Are you sure you want to delete this ?")) {   
-        //     this.holidayService.deleteEmployeeById(employeeId).subscribe(() => {  
-        //       this.dataSaved = true;  
-        //       this.massage = 'Record Deleted Succefully';  
-        //       this.loadAllEmployees();  
-        //       this.holidayIdUpdate = null;  
-        //       this.holidayForm.reset();  
-        //       });  
-        //     }  
-        //  // alert(employeeId);
-        // }  
-        //deleteEmployee() {
-        //    //alert(this.holidayIdUpdate);
-        //    if (confirm("Are you sure you want to delete this ?")) {
-        //        this.holidayService.deleteHolidayById(this.holidayIdUpdate).subscribe(() => {
-        //            this.dataSaved = true;
-        //            this.massage = 'Record Deleted Succefully';
-        //            this.loadAllHolidays();
-        //            this.holidayIdUpdate = null;
-        //            this.buttonDisable = true;
-        //            this.holidayForm.reset();
-        //        });
-        //    }
-        //    // alert(employeeId);
-        //}
-        //deleteEmployee() {
-        //    this.holidayService.deleteItem(this.Userid).subscribe(() => {
-        //        if (this.holiday.Flag = 1) {
-        //            this.message = 'Record deleted Successfully';
-        //            alert(this.message);
-        //            this.loadAllHolidays();
-        //            this.buttonDisabled1 = true;
-        //        }
-        //        else {
-        //            this.message = 'Invalid Credential';
-        //            alert(this.message);
-        //        }
-        //    });
-        //}
-        //resetForm() {
-        //    this.holidayForm.reset();
-        //    this.massage = null;
-        //    this.message = null;
-        //    this.dataSaved = false;
-        //    this.holidayIdUpdate = null;
-        //    this.buttonDisable = true;
-        //}
-        //singleClickFunction() {
-        //    debugger;
-        //    //alert("Single click");
-        //    this.rowSelected = true;
-        //    event.preventDefault();
-        //}
-        // doubleClickFunction(employeeId: string){
-        //   this.holidayService.getEmployeeById(employeeId).subscribe(employee=> {  
-        //     this.massage = null;  
-        //     this.dataSaved = false;  
-        //     this.holidayIdUpdate = employee.EmpId;  
-        //     this.holidayForm.controls['EmpName'].setValue(employee.EmpName);  
-        //    this.holidayForm.controls['DateOfBirth'].setValue(employee.DateOfBirth);  
-        //     this.holidayForm.controls['EmailId'].setValue(employee.EmailId);  
-        //     this.holidayForm.controls['Gender'].setValue(employee.Gender);  
-        //     this.holidayForm.controls['Address'].setValue(employee.Address);  
-        //     this.holidayForm.controls['PinCode'].setValue(employee.PinCode);  
-        //   });  
-        //  // alert(employeeId);
-        //   this.EmpId=employeeId;
-        //   alert(this.EmpId);
-        // }
+        else {
+            this.validateAllFormFields(this.HolidayForm);
+        }
+    };
+    HolidayMasterComponent.prototype.validateAllFormFields = function (formGroup) {
+        var _this = this;
+        Object.keys(formGroup.controls).forEach(function (field) {
+            var control = formGroup.get(field);
+            if (control instanceof FormControl) {
+                control.markAsTouched({ onlySelf: true });
+            }
+            else if (control instanceof FormGroup) {
+                _this.validateAllFormFields(control);
+            }
+        });
     };
     HolidayMasterComponent = tslib_1.__decorate([
         Component({

@@ -5,7 +5,10 @@ var HeaderComponent = /** @class */ (function () {
     function HeaderComponent(router) {
         this.router = router;
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    HeaderComponent.prototype.ngOnInit = function () { };
+    HeaderComponent.prototype.logout = function () {
+        sessionStorage.clear();
+        this.router.navigate(['/Login']);
     };
     HeaderComponent = tslib_1.__decorate([
         Component({

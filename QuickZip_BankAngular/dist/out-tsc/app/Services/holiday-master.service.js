@@ -9,21 +9,21 @@ var HolidayMasterService = /** @class */ (function () {
         this.baseUrl = "";
         this.baseUrl = myAppUrl;
     }
-    HolidayMasterService.prototype.getAllHoliday = function () {
+    HolidayMasterService.prototype.getHolidays = function () {
         debugger;
         return this._http.get(this.baseUrl + 'api/Holiday/Index');
     };
-    HolidayMasterService.prototype.SaveEmployee = function (em) {
+    HolidayMasterService.prototype.SaveHoliday = function (em) {
         var body = em;
         var headers = new HttpHeaders().set('content-type', 'application/json');
         return this._http.post(this.baseUrl + 'api/Holiday/Create', body, {
             headers: headers
         });
     };
-    HolidayMasterService.prototype.deleteItem = function (em) {
+    HolidayMasterService.prototype.DeleteHoliday = function (em) {
         return this._http.delete(this.baseUrl + 'api/Holiday/Delete/' + em);
     };
-    HolidayMasterService.prototype.updateItem = function (em, Userid) {
+    HolidayMasterService.prototype.UpdateHoliday = function (em, Userid) {
         var body = em;
         var headers = new HttpHeaders().set('content-type', 'application/json');
         return this._http.post(this.baseUrl + 'api/Holiday/Edit/' + Userid, body, {
@@ -44,27 +44,3 @@ var HolidayMasterService = /** @class */ (function () {
     return HolidayMasterService;
 }());
 export { HolidayMasterService };
-//    url = 'http://localhost:49512/Api';
-//    constructor(private http: HttpClient) { }
-//    getAllHoliday(): Observable<Holiday[]> {
-//        return this.http.get<Holiday[]>(this.url + '/AllHolidayDetails');
-//    }
-//    getHolidayById(employeeId: string): Observable<Holiday> {
-//        return this.http.get<Holiday>(this.url + '/GetHolidayDetailsById/' + employeeId);
-//    }
-//    createHoliday(holiday: Holiday): Observable<Holiday> {
-//        const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-//        return this.http.post<Holiday>(this.url + '/InsertHolidayDetails/',
-//            holiday, httpOptions);
-//    }
-//    updateHoliday(holiday: Holiday): Observable<Holiday> {
-//        const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-//        return this.http.put<Holiday>(this.url + '/UpdateHolidayDetails/',
-//            holiday, httpOptions);
-//    }
-//    deleteHolidayById(holidayId: string): Observable<number> {
-//        const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-//        return this.http.delete<number>(this.url + '/DeleteHolidayDetails?id=' + holidayId,
-//            httpOptions);
-//    }
-//}  
