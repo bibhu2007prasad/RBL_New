@@ -97,9 +97,6 @@ span#lblmsg {
     float: left;
 }
 
-span.ace {
-}
-
 
 .toolbar1 img {
     margin-top: 4px;
@@ -315,7 +312,7 @@ form {
     margin-bottom: 6px;
 }
 
-@import "compass/css3";
+
 
 * {
     box-sizing: border-box;
@@ -528,9 +525,10 @@ input[type=submit] {
 
 .zipNachlogo img {
     width: 66%;
-    padding-left: 16px;
+    padding-left: 32px;
 }
-
+.navbar-container {
+margin-left:-4px}
 input[type=text]:hover,
 input[type=password]:hover,
 label:hover ~ input[type=text],

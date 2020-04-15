@@ -24,6 +24,10 @@ tr:nth-child(even) {
         border: 1px solid #dddddd;
         padding:3px 3px;
     }
+select.dropdown{
+    height: 24px !important;
+    font-size: 11px !important;
+}
 .no-padding {
 padding:0px !important}
 .boxhead {
@@ -39,5 +43,5 @@ font-size:11px !important}
 .form-group .txtField {
 display:inline-block}
 .form-group input[type=text], .form-group input[type=date] {
-    height: 22px;
+    height: 24px;
 }
