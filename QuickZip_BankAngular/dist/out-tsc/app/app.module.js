@@ -1,4 +1,7 @@
 import * as tslib_1 from "tslib";
+/// <reference path="services/login-service.service.ts" />
+/// <reference path="services/login-service.service.ts" />
+/// <reference path="services/login-service.service.ts" />
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +17,7 @@ import { NachMandateComponent } from './master/nach-mandate/nach-mandate.compone
 import { HistoricalMandateComponent } from './master/historical-mandate/historical-mandate.component';
 import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component';
 import { RegionMasterComponent } from './master/region-master/region-master.component';
-import { HttpClientModule } from '@angular/common/http';
+import { LoginServiceService } from './Services/login-service.service';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,6 +30,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { EmployeeMasterComponent } from './master/employee-master/employee-master.component';
+import { DesignationMasterComponent } from './master/designation-master/designation-master.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -55,23 +61,7 @@ var AppModule = /** @class */ (function () {
                 MatTooltipModule,
                 MatToolbarModule, BrowserAnimationsModule,
             ],
-            providers: [HttpClientModule,
-                BrowserModule,
-                AppRoutingModule,
-                FormsModule,
-                ReactiveFormsModule,
-                MatDatepickerModule,
-                MatNativeDateModule,
-                MatButtonModule,
-                MatMenuModule,
-                MatDatepickerModule,
-                MatIconModule,
-                MatRadioModule,
-                MatCardModule,
-                MatSidenavModule,
-                MatInputModule,
-                MatTooltipModule,
-                MatToolbarModule, BrowserAnimationsModule],
+            providers: [LoginServiceService, { provide: 'BASE_URL', useFactory: getBaseUrl }],
             bootstrap: [AppComponent]
         })
     ], AppModule);
