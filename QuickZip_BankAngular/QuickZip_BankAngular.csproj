@@ -50,7 +50,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>C:\Users\YOEKI-10\Desktop\Encryption.dll</HintPath>
+      <HintPath>..\BusinessLibrary\bin\Debug\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -279,6 +279,7 @@
     <Content Include="ClientApp\assets\images\yoekilogo.png" />
     <Content Include="ClientApp\assets\images\ZipNach1.png" />
     <Content Include="ClientApp\assets\images\ZipNach_logo.png" />
+    <Content Include="ClientApp\assets\js\bootstrap.min.js" />
     <Content Include="ClientApp\favicon.ico" />
     <Content Include="ClientApp\index.html" />
     <Content Include="ClientApp\karma.conf.js" />
