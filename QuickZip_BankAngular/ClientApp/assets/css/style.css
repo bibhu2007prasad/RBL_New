@@ -1,15 +1,18 @@
-﻿body {margin:0px; padding:0px
+﻿body {
+    margin: 0px;
+    padding: 0px
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
 }
 
-table thead {
+    table thead {
         background-color: #7f8a98;
     }
 
-table thead tr th {
+        table thead tr th {
             color: #ffffff !important;
         }
 
@@ -19,17 +22,21 @@ tr:nth-child(even) {
     background-color: #e0e2e4;
 }
 
-    table thead tr th, table tbody tr td {
-        font-size: 11.5px !important;
-        border: 1px solid #dddddd;
-        padding:3px 3px;
-    }
-select.dropdown{
+table thead tr th, table tbody tr td {
+    font-size: 11.5px !important;
+    border: 1px solid #dddddd;
+    padding: 3px 3px;
+}
+
+select.dropdown {
     height: 24px !important;
     font-size: 11px !important;
 }
+
 .no-padding {
-padding:0px !important}
+    padding: 0px !important
+}
+
 .boxhead {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -38,10 +45,26 @@ padding:0px !important}
     background-color: #f1f2f3;
     padding: 10px 10px;
 }
+
 .form-group label {
-font-size:11px !important}
+    font-size: 11px !important;
+    margin-bottom: 4px;
+    vertical-align: top;
+    padding-top: 5px !important;
+}
+
 .form-group .txtField {
-display:inline-block}
+    display: inline-block
+}
+
 .form-group input[type=text], .form-group input[type=date] {
     height: 24px;
+}
+
+.pull-right {
+    float: right
+}
+
+.pull-left {
+    float: left
 }

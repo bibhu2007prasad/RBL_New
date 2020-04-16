@@ -44,6 +44,15 @@ import { CommonModule } from '@angular/common';
 import { RegionMasterComponent } from './master/region-master/region-master.component';
 import { EmployeeMasterComponent } from './master/employee-master/employee-master.component';
 import { DesignationMasterComponent } from './master/designation-master/designation-master.component';
+import { BranchMasterComponent } from './master/branch-master/branch-master.component';
+import { ChargeMasterComponent } from './master/charge-master/charge-master.component';
+import { DocumentMasterComponent } from './master/document-master/document-master.component';
+import { TemplateMasterComponent } from './master/template-master/template-master.component';
+import { SettlementTypeMasterComponent } from './master/settlement-type-master/settlement-type-master.component';
+import { BusinessSegmentMasterComponent } from './master/business-segment-master/business-segment-master.component';
+import { ReturnReasonMasterComponent } from './master/return-reason-master/return-reason-master.component';
+import { AllumrnComponent } from './master/allumrn/allumrn.component';
+import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
 @NgModule({
     declarations: [
         AppComponent
@@ -52,6 +61,8 @@ import { DesignationMasterComponent } from './master/designation-master/designat
         , EmployeeMasterComponent
         , DesignationMasterComponent
         , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HistoricalMandateComponent, HolidayMasterComponent
+        , BranchMasterComponent, ChargeMasterComponent, DocumentMasterComponent, TemplateMasterComponent, SettlementTypeMasterComponent,
+        BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent
     ],
     imports: [
         BrowserModule,

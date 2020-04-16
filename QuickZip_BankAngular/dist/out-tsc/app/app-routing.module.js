@@ -10,6 +10,15 @@ import { HolidayMasterComponent } from './master/holiday-master/holiday-master.c
 import { RegionMasterComponent } from './master/region-master/region-master.component';
 import { EmployeeMasterComponent } from './master/employee-master/employee-master.component';
 import { DesignationMasterComponent } from './master/designation-master/designation-master.component';
+import { BranchMasterComponent } from './master/branch-master/branch-master.component';
+import { ChargeMasterComponent } from './master/charge-master/charge-master.component';
+import { DocumentMasterComponent } from './master/document-master/document-master.component';
+import { TemplateMasterComponent } from './master/template-master/template-master.component';
+import { SettlementTypeMasterComponent } from './master/settlement-type-master/settlement-type-master.component';
+import { BusinessSegmentMasterComponent } from './master/business-segment-master/business-segment-master.component';
+import { ReturnReasonMasterComponent } from './master/return-reason-master/return-reason-master.component';
+import { AllumrnComponent } from './master/allumrn/allumrn.component';
+import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
 var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
     { path: 'user', component: UserComponent },
@@ -19,7 +28,16 @@ var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 
     { path: 'HolidayMaster', component: HolidayMasterComponent },
     { path: 'RegionMaster', component: RegionMasterComponent },
     { path: 'EmployeeMaster', component: EmployeeMasterComponent },
-    { path: 'DesignationMaster', component: DesignationMasterComponent }
+    { path: 'DesignationMaster', component: DesignationMasterComponent },
+    { path: 'BranchMaster', component: BranchMasterComponent },
+    { path: 'ChargeMaster', component: ChargeMasterComponent },
+    { path: 'DocumentMaster', component: DocumentMasterComponent },
+    { path: 'TemplateMaster', component: TemplateMasterComponent },
+    { path: 'SettlemetTypeMaster', component: SettlementTypeMasterComponent },
+    { path: 'BusinessSegmentMaster', component: BusinessSegmentMasterComponent },
+    { path: 'ReturnReasonMaster', component: ReturnReasonMasterComponent },
+    { path: 'Allumrn', component: AllumrnComponent },
+    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
