@@ -11,6 +11,7 @@ import { EmployeeMasterComponent } from './master/employee-master/employee-maste
 import { DesignationMasterComponent } from './master/designation-master/designation-master.component';
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
+import { EntityComponent } from './master/entity/entity.component';
 var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
     { path: 'user', component: UserComponent },
@@ -21,7 +22,8 @@ var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 
     { path: 'EmployeeMaster', component: EmployeeMasterComponent },
     { path: 'DesignationMaster', component: DesignationMasterComponent },
     { path: 'Allumrn', component: AllumrnComponent },
-    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent }
+    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent },
+    { path: 'Entity', component: EntityComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

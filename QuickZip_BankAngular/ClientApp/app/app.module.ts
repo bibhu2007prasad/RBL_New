@@ -22,6 +22,12 @@ import { EmployeeMasterComponent } from './master/employee-master/employee-maste
 import { DesignationMasterComponent } from './master/designation-master/designation-master.component';
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
+import { EntityComponent } from './master/entity/entity.component';
+import { CommunicationtemplateComponent } from './master/communicationtemplate/communicationtemplate.component';
+import { SubmembermasterComponent } from './master/submembermaster/submembermaster.component';
+import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
+import { BranchmasterComponent } from './master/branchmaster/branchmaster.component';
+import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
 @NgModule({
     declarations: [
         AppComponent
@@ -29,7 +35,7 @@ import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/new
         , RegionMasterComponent
         , EmployeeMasterComponent
         , DesignationMasterComponent
-        , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent, AllumrnComponent, NewhistoricalmandateComponent
+        , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, EntityComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, BranchmasterComponent, PsmmasterComponent
     ],
     imports: [
         BrowserModule,
