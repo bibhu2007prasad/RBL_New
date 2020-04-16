@@ -14,7 +14,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./holiday-master.component.css']
 })
 export class HolidayMasterComponent implements OnInit {
-    HolidayForm: FormGroup; holiday: Holiday; Emplist = []; buttonDisabledReset: boolean = true;buttonDisabledDelete: boolean = true; submitted = false; sucess = false; Show = true;
+    HolidayForm: FormGroup; holiday: Holiday; Emplist = []; buttonDisabledReset: boolean = false;buttonDisabledDelete: boolean = true; submitted = false; sucess = false; Show = true;
     Temp: number = 1; Userid: number = 0; loading: boolean = false;
     message: string;
     setClickedRow: Function;
@@ -30,7 +30,7 @@ export class HolidayMasterComponent implements OnInit {
     }
 
     ngOnInit() {
-        // debugger;
+         debugger;
         this.HolidayForm = this.formbulider.group({
             HolidayName: ['', [Validators.required]],
             Date: ['', [Validators.required]],
@@ -63,7 +63,7 @@ export class HolidayMasterComponent implements OnInit {
     }
     ResetHoliday() {
         this.HolidayForm.reset();
-        this.buttonDisabledReset = true;
+        this.buttonDisabledReset = false;
         this.buttonDisabledDelete = true
         this.submitted = false;
         this.sucess = false;
@@ -110,7 +110,7 @@ export class HolidayMasterComponent implements OnInit {
                 this.loadAllHolidays();
                 this.HolidayForm.reset();
                 this.buttonDisabledDelete = true;
-                this.buttonDisabledReset = true;
+                this.buttonDisabledReset = false;
             }
             else {
                 this.message = 'Invalid Credential';
@@ -127,7 +127,7 @@ export class HolidayMasterComponent implements OnInit {
                     this.loadAllHolidays()
 
                     this.buttonDisabledDelete = true;
-                    this.buttonDisabledReset = true;
+                    this.buttonDisabledReset = false;
                 }
                 else {
                     this.message = 'Invalid Credential';

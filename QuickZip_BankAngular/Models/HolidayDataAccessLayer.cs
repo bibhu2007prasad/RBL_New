@@ -39,7 +39,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Holiday>().Execute("@QueryType", "@HolidayName", "@HolidayDate", "@UserId", "@EntityId", "SaveHoliday_HolidayMaster", holiday.HolidayName, holiday.HolidayDate,UserId,EntityId);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Holiday>().Execute("@QueryType", "@HolidayName", "@HolidayDate", "@UserId", "@EntityId", "SaveHoliday_HolidayMaster", holiday.HolidayName, Convert.ToString(holiday.HolidayDate),UserId,EntityId);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -78,7 +78,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Holiday>().Execute("@QueryType", "@HolidayName", "@HolidayDate", "@UserId", "@EntityId", "@HolidayID", "Update_HolidayMaster", holiday.HolidayName, holiday.HolidayDate,UserId,EntityId,id.ToString());
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Holiday>().Execute("@QueryType", "@HolidayName", "@HolidayDate", "@UserId", "@EntityId", "@HolidayID", "Update_HolidayMaster", holiday.HolidayName, Convert.ToString(holiday.HolidayDate),UserId,EntityId,id.ToString());
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Holiday>().ToList();

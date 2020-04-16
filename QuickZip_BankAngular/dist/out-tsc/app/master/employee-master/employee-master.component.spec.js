@@ -1,20 +1,20 @@
-import { async, TestBed } from '@angular/core/testing';
-import { EmployeeMasterComponent } from './employee-master.component';
-describe('EmployeeMasterComponent', function () {
-    var component;
-    var fixture;
-    beforeEach(async(function () {
-        TestBed.configureTestingModule({
-            declarations: [EmployeeMasterComponent]
-        })
-            .compileComponents();
-    }));
-    beforeEach(function () {
-        fixture = TestBed.createComponent(EmployeeMasterComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
-    it('should create', function () {
-        expect(component).toBeTruthy();
-    });
-});
+//import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+//import { EmployeeMasterComponent } from './employee-master.component';
+//describe('EmployeeMasterComponent', () => {
+//  let component: EmployeeMasterComponent;
+//  let fixture: ComponentFixture<EmployeeMasterComponent>;
+//  beforeEach(async(() => {
+//    TestBed.configureTestingModule({
+//      declarations: [ EmployeeMasterComponent ]
+//    })
+//    .compileComponents();
+//  }));
+//  beforeEach(() => {
+//    fixture = TestBed.createComponent(EmployeeMasterComponent);
+//    component = fixture.componentInstance;
+//    fixture.detectChanges();
+//  });
+//  it('should create', () => {
+//    expect(component).toBeTruthy();
+//  });
+//});

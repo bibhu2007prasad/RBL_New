@@ -1,8 +1,8 @@
 export class Holiday {
     dataList: any;
-    HolidayId: string;  
+    HolidayID: number;  
     HolidayName: string;  
-    HolidayDate: string;  
-    Sno: string;
+    HolidayDate:string;  
+    Sno: number;
     Flag: number;  
 }

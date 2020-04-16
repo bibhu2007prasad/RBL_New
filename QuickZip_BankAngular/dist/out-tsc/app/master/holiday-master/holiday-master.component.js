@@ -8,7 +8,7 @@ var HolidayMasterComponent = /** @class */ (function () {
         this.formbulider = formbulider;
         this._holidayService = _holidayService;
         this.Emplist = [];
-        this.buttonDisabledReset = true;
+        this.buttonDisabledReset = false;
         this.buttonDisabledDelete = true;
         this.submitted = false;
         this.sucess = false;
@@ -21,7 +21,7 @@ var HolidayMasterComponent = /** @class */ (function () {
         this.holiday.dataList = [];
     }
     HolidayMasterComponent.prototype.ngOnInit = function () {
-        // debugger;
+        debugger;
         this.HolidayForm = this.formbulider.group({
             HolidayName: ['', [Validators.required]],
             Date: ['', [Validators.required]],
@@ -53,7 +53,7 @@ var HolidayMasterComponent = /** @class */ (function () {
     };
     HolidayMasterComponent.prototype.ResetHoliday = function () {
         this.HolidayForm.reset();
-        this.buttonDisabledReset = true;
+        this.buttonDisabledReset = false;
         this.buttonDisabledDelete = true;
         this.submitted = false;
         this.sucess = false;
@@ -99,7 +99,7 @@ var HolidayMasterComponent = /** @class */ (function () {
                 _this.loadAllHolidays();
                 _this.HolidayForm.reset();
                 _this.buttonDisabledDelete = true;
-                _this.buttonDisabledReset = true;
+                _this.buttonDisabledReset = false;
             }
             else {
                 _this.message = 'Invalid Credential';
@@ -115,7 +115,7 @@ var HolidayMasterComponent = /** @class */ (function () {
                 alert(_this.message);
                 _this.loadAllHolidays();
                 _this.buttonDisabledDelete = true;
-                _this.buttonDisabledReset = true;
+                _this.buttonDisabledReset = false;
             }
             else {
                 _this.message = 'Invalid Credential';
