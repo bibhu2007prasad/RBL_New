@@ -11,7 +11,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserComponent } from './master/user/user.component';
 import { DashboardComponent } from './master/dashboard/dashboard.component';
 import { NachMandateComponent } from './master/nach-mandate/nach-mandate.component';
-import { HistoricalMandateComponent } from './master/historical-mandate/historical-mandate.component';
 import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component'; 
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HolidayMasterService } from './Services/holiday-master.service'; 
@@ -53,6 +52,11 @@ import { BusinessSegmentMasterComponent } from './master/business-segment-master
 import { ReturnReasonMasterComponent } from './master/return-reason-master/return-reason-master.component';
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
+import { CommunicationtemplateComponent } from './master/communicationtemplate/communicationtemplate.component';
+import { SubmembermasterComponent } from './master/submembermaster/submembermaster.component';
+import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
+import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
 @NgModule({
     declarations: [
         AppComponent
@@ -60,9 +64,9 @@ import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/new
         , RegionMasterComponent
         , EmployeeMasterComponent
         , DesignationMasterComponent
-        , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HistoricalMandateComponent, HolidayMasterComponent
+        , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent
         , BranchMasterComponent, ChargeMasterComponent, DocumentMasterComponent, TemplateMasterComponent, SettlementTypeMasterComponent,
-        BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent
+        BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, PsmmasterComponent, RblBranchMasterComponent 
     ],
     imports: [
         BrowserModule,

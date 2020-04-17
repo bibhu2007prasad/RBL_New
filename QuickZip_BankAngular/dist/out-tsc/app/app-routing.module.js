@@ -5,7 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './master/user/user.component';
 import { DashboardComponent } from './master/dashboard/dashboard.component';
 import { NachMandateComponent } from './master/nach-mandate/nach-mandate.component';
-import { HistoricalMandateComponent } from './master/historical-mandate/historical-mandate.component';
 import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component';
 import { RegionMasterComponent } from './master/region-master/region-master.component';
 import { EmployeeMasterComponent } from './master/employee-master/employee-master.component';
@@ -19,12 +18,16 @@ import { BusinessSegmentMasterComponent } from './master/business-segment-master
 import { ReturnReasonMasterComponent } from './master/return-reason-master/return-reason-master.component';
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
+import { CommunicationtemplateComponent } from './master/communicationtemplate/communicationtemplate.component';
+import { SubmembermasterComponent } from './master/submembermaster/submembermaster.component';
+import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
+import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
 var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
     { path: 'user', component: UserComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'NachMandate', component: NachMandateComponent },
-    { path: 'HistoricalMandate', component: HistoricalMandateComponent },
     { path: 'HolidayMaster', component: HolidayMasterComponent },
     { path: 'RegionMaster', component: RegionMasterComponent },
     { path: 'EmployeeMaster', component: EmployeeMasterComponent },
@@ -37,7 +40,12 @@ var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 
     { path: 'BusinessSegmentMaster', component: BusinessSegmentMasterComponent },
     { path: 'ReturnReasonMaster', component: ReturnReasonMasterComponent },
     { path: 'Allumrn', component: AllumrnComponent },
-    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent }
+    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent },
+    { path: 'Communicationtemplate', component: CommunicationtemplateComponent },
+    { path: 'Submembermaster', component: SubmembermasterComponent },
+    { path: 'Utilitymaster', component: UtilitymasterComponent },
+    { path: 'Psmmaster', component: PsmmasterComponent },
+    { path: 'RBLBranchmaster', component: RblBranchMasterComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
