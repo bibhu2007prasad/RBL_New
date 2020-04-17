@@ -8,7 +8,10 @@
     vertical-align: top;
     padding-top: 5px !important;
 }
-
+.table tr.active td {
+    background-color: #123456 !important;
+    color: white;
+}
 #maincontent {
     position: absolute;
     top: 8%;

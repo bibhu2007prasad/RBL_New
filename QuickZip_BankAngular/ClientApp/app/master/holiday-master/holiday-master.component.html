@@ -35,7 +35,7 @@
                                 </label>
                                 <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
                                     <!--<input type="date" class="col-sm-12 col-md-12 col-xs-12 " placeholder="Select Date " />-->
-                                    <input  class="col-sm-12 col-md-12 col-xs-12 " formControlName="Date"  placeholder="Select Date" type="date">
+                                    <input  class="col-sm-12 col-md-12 col-xs-12 " formControlName="HolidayDate" [ngModel]="today | date:'yyyy-MM-dd'"   placeholder="Select Date" type="date">
                                 </div>
                             </div>
                         </div>

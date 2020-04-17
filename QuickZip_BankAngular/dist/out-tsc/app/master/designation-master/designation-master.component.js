@@ -16,7 +16,6 @@ var DesignationMasterComponent = /** @class */ (function () {
         this.Temp = 1;
         this.Userid = 0;
         this.loading = false;
-        debugger;
         this.designation = new Designation();
         this.designation.dataList = [];
     }
@@ -25,7 +24,7 @@ var DesignationMasterComponent = /** @class */ (function () {
         this.DesignationForm = this.formbulider.group({
             DesignationCode: ['', [Validators.required]],
             DesignationName: ['', [Validators.required]],
-            Active: ['', [Validators.required]],
+            IsActive: ['', [Validators.required]],
         });
         this.setClickedRow = function (index) {
             this.selectedRow = index;
@@ -42,7 +41,6 @@ var DesignationMasterComponent = /** @class */ (function () {
         };
     };
     DesignationMasterComponent.prototype.loadAllDegignations = function () {
-        debugger;
         this.loading = true;
         var currentContext = this;
         this._designationService.getDesignations().
@@ -66,7 +64,6 @@ var DesignationMasterComponent = /** @class */ (function () {
     };
     DesignationMasterComponent.prototype.SaveDesignation = function () {
         var _this = this;
-        debugger;
         this._designationService.SaveDesignation(JSON.stringify(this.DesignationForm.value)).subscribe(function (data) {
             _this.designation = data;
             if (_this.designation.Flag = 1) {
@@ -87,7 +84,7 @@ var DesignationMasterComponent = /** @class */ (function () {
         this.Userid = data.DId;
         this.DesignationForm.controls['DesignationCode'].setValue(data.DesignationCode);
         this.DesignationForm.controls['DesignationName'].setValue(data.DesignationName);
-        //this.DesignationForm.controls['Active'].setValue(data.Active);
+        this.DesignationForm.controls['IsActive'].setValue(data.IsActive);
         this.buttonDisabledDelete = false;
         this.buttonDisabledReset = false;
         this.Temp = 2;
@@ -129,7 +126,6 @@ var DesignationMasterComponent = /** @class */ (function () {
         });
     };
     DesignationMasterComponent.prototype.onSubmit = function () {
-        debugger;
         //alert('OnSubmi Clicked');
         this.submitted = true;
         if (this.DesignationForm.valid) {

@@ -17,6 +17,7 @@ export class HolidayMasterComponent implements OnInit {
     HolidayForm: FormGroup; holiday: Holiday; Emplist = []; buttonDisabledReset: boolean = false;buttonDisabledDelete: boolean = true; submitted = false; sucess = false; Show = true;
     Temp: number = 1; Userid: number = 0; loading: boolean = false;
     message: string;
+    today: Date;
     setClickedRow: Function;
     games: [{
         HolidayID: string,
@@ -24,16 +25,17 @@ export class HolidayMasterComponent implements OnInit {
         HolidayDate: string
     }];
     constructor(private formbulider: FormBuilder, private _holidayService: HolidayMasterService) {
-        debugger;
+       
         this.holiday = new Holiday();
-        this.holiday.dataList =[];
+        this.holiday.dataList = [];
+        
     }
 
     ngOnInit() {
-         debugger;
+         
         this.HolidayForm = this.formbulider.group({
             HolidayName: ['', [Validators.required]],
-            Date: ['', [Validators.required]],
+            HolidayDate: ['', [Validators.required]],
            
         });
         this.setClickedRow = function (index) {
@@ -51,7 +53,7 @@ export class HolidayMasterComponent implements OnInit {
         };
     }
     loadAllHolidays() {
-        debugger;
+        
         this.loading = true;
         var currentContext = this;
         this._holidayService.getHolidays().
@@ -74,7 +76,7 @@ export class HolidayMasterComponent implements OnInit {
         this.message = null;
     }
     SaveHoliday() {
-        debugger;
+        
         this._holidayService.SaveHoliday(JSON.stringify(this.HolidayForm.value)).subscribe(
             (data) => {
                 this.holiday = data;
@@ -95,8 +97,11 @@ export class HolidayMasterComponent implements OnInit {
     onRowClicked(data: any) {
         const Currentrowid = this.HolidayForm.value;
         this.Userid = data.HolidayID;
+        ////let oldDate = "24.01.2017";
+        ////let newDate = new Date(data.HolidayDate);
         this.HolidayForm.controls['HolidayName'].setValue(data.HolidayName);
-        this.HolidayForm.controls['Date'].setValue(data.HolidayDate);
+        //this.HolidayForm.controls['HolidayDate'].setValue(newDate);
+        this.today = new Date(data.HolidayDate);
         
         this.buttonDisabledDelete = false;
         this.buttonDisabledReset = false;
@@ -140,7 +145,7 @@ export class HolidayMasterComponent implements OnInit {
         )
     }
     onSubmit() {
-        debugger;
+        
         //alert('OnSubmi Clicked');
         this.submitted = true;
         if (this.HolidayForm.valid) {

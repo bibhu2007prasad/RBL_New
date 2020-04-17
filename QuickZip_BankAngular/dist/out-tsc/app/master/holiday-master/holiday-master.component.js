@@ -16,15 +16,13 @@ var HolidayMasterComponent = /** @class */ (function () {
         this.Temp = 1;
         this.Userid = 0;
         this.loading = false;
-        debugger;
         this.holiday = new Holiday();
         this.holiday.dataList = [];
     }
     HolidayMasterComponent.prototype.ngOnInit = function () {
-        debugger;
         this.HolidayForm = this.formbulider.group({
             HolidayName: ['', [Validators.required]],
-            Date: ['', [Validators.required]],
+            HolidayDate: ['', [Validators.required]],
         });
         this.setClickedRow = function (index) {
             this.selectedRow = index;
@@ -41,7 +39,6 @@ var HolidayMasterComponent = /** @class */ (function () {
         };
     };
     HolidayMasterComponent.prototype.loadAllHolidays = function () {
-        debugger;
         this.loading = true;
         var currentContext = this;
         this._holidayService.getHolidays().
@@ -65,7 +62,6 @@ var HolidayMasterComponent = /** @class */ (function () {
     };
     HolidayMasterComponent.prototype.SaveHoliday = function () {
         var _this = this;
-        debugger;
         this._holidayService.SaveHoliday(JSON.stringify(this.HolidayForm.value)).subscribe(function (data) {
             _this.holiday = data;
             if (_this.holiday.Flag = 1) {
@@ -84,8 +80,11 @@ var HolidayMasterComponent = /** @class */ (function () {
     HolidayMasterComponent.prototype.onRowClicked = function (data) {
         var Currentrowid = this.HolidayForm.value;
         this.Userid = data.HolidayID;
+        ////let oldDate = "24.01.2017";
+        ////let newDate = new Date(data.HolidayDate);
         this.HolidayForm.controls['HolidayName'].setValue(data.HolidayName);
-        this.HolidayForm.controls['Date'].setValue(data.HolidayDate);
+        //this.HolidayForm.controls['HolidayDate'].setValue(newDate);
+        this.today = new Date(data.HolidayDate);
         this.buttonDisabledDelete = false;
         this.buttonDisabledReset = false;
         this.Temp = 2;
@@ -127,7 +126,6 @@ var HolidayMasterComponent = /** @class */ (function () {
         });
     };
     HolidayMasterComponent.prototype.onSubmit = function () {
-        debugger;
         //alert('OnSubmi Clicked');
         this.submitted = true;
         if (this.HolidayForm.valid) {

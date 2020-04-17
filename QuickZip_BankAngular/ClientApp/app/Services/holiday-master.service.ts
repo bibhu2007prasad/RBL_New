@@ -18,8 +18,7 @@ export class HolidayMasterService {
     }
 
     getHolidays(): Observable<any> {
-        debugger;
-
+      
         return this._http.get<any>(this.baseUrl + 'api/Holiday/Index');
     }
     SaveHoliday(em: any): Observable<Holiday> {

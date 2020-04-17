@@ -38,7 +38,9 @@ namespace QuickZip_BankAngular.Models
             try
             {
                 string isDeleted = "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@QueryType", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "SaveDesignation_Master", Designation.DesignationCode, Designation.DesignationName, Designation.IsActive, isDeleted, UserId, EntityId);
+                string isActive = (Designation.IsActive == "true") ? "1" : "0";
+                    
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "SaveDesignation_Master", Designation.DesignationCode, Designation.DesignationName, isActive, isDeleted, UserId, EntityId);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -77,7 +79,9 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationID", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "UpdateDesignation_Master", id.ToString(), Designation.DesignationCode,Designation.DesignationName,Designation.IsActive,Designation.IsDeleted, UserId, EntityId);
+                string isDeleted = "0";
+                string isActive = (Designation.IsActive == "true") ? "1" : "0";
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationID", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "UpdateDesignation_Master", id.ToString(), Designation.DesignationCode,Designation.DesignationName,isActive, isDeleted, UserId, EntityId);
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Designation>().ToList();

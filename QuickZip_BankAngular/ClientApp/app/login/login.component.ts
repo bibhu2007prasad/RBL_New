@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         return !this.LoginForm.get(field).valid && this.LoginForm.get(field).touched;
     }
     onSubmit() {
-        debugger;
+       
         const emailid = this.LoginForm.get('Email');
         emailid.clearValidators(); emailid.updateValueAndValidity();
         if (this.LoginForm.valid) {

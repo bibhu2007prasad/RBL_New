@@ -36,7 +36,6 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.onSubmit = function () {
         var _this = this;
-        debugger;
         var emailid = this.LoginForm.get('Email');
         emailid.clearValidators();
         emailid.updateValueAndValidity();

@@ -24,7 +24,7 @@ export class DesignationMasterComponent implements OnInit {
         DId: string
     }];
     constructor(private formbulider: FormBuilder, private _designationService: DesignationMasterService) {
-        debugger;
+        
         this.designation = new Designation();
         this.designation.dataList = [];
     }
@@ -34,7 +34,7 @@ export class DesignationMasterComponent implements OnInit {
         this.DesignationForm = this.formbulider.group({
             DesignationCode: ['', [Validators.required]],
             DesignationName: ['', [Validators.required]],
-            Active: ['', [Validators.required]],
+            IsActive: ['', [Validators.required]],
 
         });
         this.setClickedRow = function (index) {
@@ -52,7 +52,7 @@ export class DesignationMasterComponent implements OnInit {
         };
     }
     loadAllDegignations() {
-        debugger;
+        
         this.loading = true;
         var currentContext = this;
         this._designationService.getDesignations().
@@ -75,7 +75,7 @@ export class DesignationMasterComponent implements OnInit {
         this.message = null;
     }
     SaveDesignation() {
-        debugger;
+        
         this._designationService.SaveDesignation(JSON.stringify(this.DesignationForm.value)).subscribe(
             (data) => {
                 this.designation = data;
@@ -98,7 +98,7 @@ export class DesignationMasterComponent implements OnInit {
         this.Userid = data.DId;
         this.DesignationForm.controls['DesignationCode'].setValue(data.DesignationCode);
         this.DesignationForm.controls['DesignationName'].setValue(data.DesignationName);
-        //this.DesignationForm.controls['Active'].setValue(data.Active);
+        this.DesignationForm.controls['IsActive'].setValue(data.IsActive);
 
         this.buttonDisabledDelete = false;
         this.buttonDisabledReset = false;
@@ -142,12 +142,13 @@ export class DesignationMasterComponent implements OnInit {
         )
     }
     onSubmit() {
-        debugger;
+       
         //alert('OnSubmi Clicked');
         this.submitted = true;
         if (this.DesignationForm.valid) {
             //this.sucess=true;
             const datat = this.DesignationForm.value;
+            
             if (this.Temp == 1) {
                 this.SaveDesignation();
             }

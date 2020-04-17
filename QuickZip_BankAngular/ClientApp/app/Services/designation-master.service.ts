@@ -17,7 +17,7 @@ export class DesignationMasterService {
     }
 
     getDesignations(): Observable<any> {
-        debugger;
+        
 
         return this._http.get<any>(this.baseUrl + 'api/Designation/Index');
     }

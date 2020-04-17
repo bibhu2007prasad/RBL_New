@@ -9,7 +9,6 @@ var DesignationMasterService = /** @class */ (function () {
         this.baseUrl = myAppUrl;
     }
     DesignationMasterService.prototype.getDesignations = function () {
-        debugger;
         return this._http.get(this.baseUrl + 'api/Designation/Index');
     };
     DesignationMasterService.prototype.SaveDesignation = function (em) {

@@ -10,7 +10,6 @@ var HolidayMasterService = /** @class */ (function () {
         this.baseUrl = myAppUrl;
     }
     HolidayMasterService.prototype.getHolidays = function () {
-        debugger;
         return this._http.get(this.baseUrl + 'api/Holiday/Index');
     };
     HolidayMasterService.prototype.SaveHoliday = function (em) {
