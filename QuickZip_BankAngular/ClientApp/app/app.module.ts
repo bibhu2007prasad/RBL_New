@@ -28,6 +28,11 @@ import { SubmembermasterComponent } from './master/submembermaster/submembermast
 import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
 import { BranchmasterComponent } from './master/branchmaster/branchmaster.component';
 import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
+import { SubmemberbanksetupComponent } from './master/submemberbanksetup/submemberbanksetup.component';
+import { UserrolesetupComponent } from './master/userrolesetup/userrolesetup.component';
+import { DebitpresentmentsetupComponent } from './master/debitpresentmentsetup/debitpresentmentsetup.component';
+import { UsersetupComponent } from './master/usersetup/usersetup.component';
 @NgModule({
     declarations: [
         AppComponent
@@ -35,7 +40,7 @@ import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
         , RegionMasterComponent
         , EmployeeMasterComponent
         , DesignationMasterComponent
-        , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, EntityComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, BranchmasterComponent, PsmmasterComponent
+        , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, EntityComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, BranchmasterComponent, PsmmasterComponent, CorporatesetupComponent, SubmemberbanksetupComponent, UserrolesetupComponent, DebitpresentmentsetupComponent, UsersetupComponent
     ],
     imports: [
         BrowserModule,

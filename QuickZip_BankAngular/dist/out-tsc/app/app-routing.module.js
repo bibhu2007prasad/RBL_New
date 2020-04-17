@@ -12,6 +12,16 @@ import { DesignationMasterComponent } from './master/designation-master/designat
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
 import { EntityComponent } from './master/entity/entity.component';
+import { CommunicationtemplateComponent } from './master/communicationtemplate/communicationtemplate.component';
+import { SubmembermasterComponent } from './master/submembermaster/submembermaster.component';
+import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
+import { BranchmasterComponent } from './master/branchmaster/branchmaster.component';
+import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
+import { SubmemberbanksetupComponent } from './master/submemberbanksetup/submemberbanksetup.component';
+import { UserrolesetupComponent } from './master/userrolesetup/userrolesetup.component';
+import { DebitpresentmentsetupComponent } from './master/debitpresentmentsetup/debitpresentmentsetup.component';
+import { UsersetupComponent } from './master/usersetup/usersetup.component';
 var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
     { path: 'user', component: UserComponent },
@@ -23,7 +33,17 @@ var routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 
     { path: 'DesignationMaster', component: DesignationMasterComponent },
     { path: 'Allumrn', component: AllumrnComponent },
     { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent },
-    { path: 'Entity', component: EntityComponent }
+    { path: 'Entity', component: EntityComponent },
+    { path: 'Communicationtemplate', component: CommunicationtemplateComponent },
+    { path: 'Submembermaster', component: SubmembermasterComponent },
+    { path: 'Utilitymaster', component: UtilitymasterComponent },
+    { path: 'Branchmaster', component: BranchmasterComponent },
+    { path: 'Psmmaster', component: PsmmasterComponent },
+    { path: 'Corporatesetup', component: CorporatesetupComponent },
+    { path: 'Submemberbanksetup', component: SubmemberbanksetupComponent },
+    { path: 'Userrolesetup', component: UserrolesetupComponent },
+    { path: 'Debitpresentmentsetup', component: DebitpresentmentsetupComponent },
+    { path: 'Usersetup', component: UsersetupComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

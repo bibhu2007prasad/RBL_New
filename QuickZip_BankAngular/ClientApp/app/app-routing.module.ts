@@ -16,6 +16,12 @@ import { SubmembermasterComponent } from './master/submembermaster/submembermast
 import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
 import { BranchmasterComponent } from './master/branchmaster/branchmaster.component';
 import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
+import { SubmemberbanksetupComponent } from './master/submemberbanksetup/submemberbanksetup.component';
+import { UserrolesetupComponent } from './master/userrolesetup/userrolesetup.component';
+import { DebitpresentmentsetupComponent } from './master/debitpresentmentsetup/debitpresentmentsetup.component';
+import { UsersetupComponent } from './master/usersetup/usersetup.component';
+
 
 
 
@@ -35,7 +41,13 @@ const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, p
     { path: 'Submembermaster', component: SubmembermasterComponent },    
     { path: 'Utilitymaster', component: UtilitymasterComponent },    
     { path: 'Branchmaster', component: BranchmasterComponent },    
-    { path: 'Psmmaster', component: PsmmasterComponent }  
+    { path: 'Psmmaster', component: PsmmasterComponent },
+
+    { path: 'Corporatesetup', component: CorporatesetupComponent },
+    { path: 'Submemberbanksetup', component: SubmemberbanksetupComponent },
+    { path: 'Userrolesetup', component: UserrolesetupComponent },
+    { path: 'Debitpresentmentsetup', component: DebitpresentmentsetupComponent },
+    { path: 'Usersetup', component: UsersetupComponent }
 
 ];
 
