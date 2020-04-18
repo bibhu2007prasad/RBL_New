@@ -985,10 +985,11 @@
     <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\DesignationDataAccessLayer.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
+    <Compile Include="Models\Designation\DesignationDD.cs" />
     <Compile Include="Models\DocumentDataAccessLayer.cs" />
     <Compile Include="Models\Document\Document.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDataAccessLayer.cs" />
+    <Compile Include="Models\Employee\Employee.cs" />
     <Compile Include="Models\Holiday\Holiday.cs" />
     <Compile Include="Models\HolidayDataAccessLayer.cs" />
     <Compile Include="Models\Login\Login.cs" />
@@ -1069,8 +1070,10 @@
     <TypeScriptCompile Include="ClientApp\app\master\settlement-type-master\settlement-type-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\template-master\template-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\template-master\template-master.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Designation\dddesignation.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Designation\designation.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Document\document.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Employee\employee.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Holiday\holiday.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\holiday-master\holiday-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\holiday-master\holiday-master.component.ts" />
@@ -1083,8 +1086,8 @@
     <TypeScriptCompile Include="ClientApp\app\Services\designation-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\document-master.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\document-master.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.spec.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\employee-service.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\employee-master.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\employee-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\holiday-master.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\holiday-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.spec.ts" />

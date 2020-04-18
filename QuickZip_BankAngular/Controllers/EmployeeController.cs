@@ -12,34 +12,39 @@ namespace QuickZip_BankAngular.Controllers
     public class EmployeeController : ApiController
     {
         EmployeeDataAccessLayer objemployee = new EmployeeDataAccessLayer();
+
+       [HttpGet]
+        // [Route("api/NachMandate/Binddetails")]
+        [Route("api/Employee/BindDesignation/{UserId}/{EntityId}")]
+        public Dictionary<string, object> BindDesignation(string UserId, string EntityId)
+        {
+            return objemployee.BindDesignation(UserId, EntityId);
+        }
+
         [HttpGet]
-        [Route("api/Employee/Index")]
-        public Dictionary<string, object> Index()
+        [Route("api/Employee/Index/{UserId}/{EntityId}")]
+        public Dictionary<string, object> Index(string UserId, string EntityId)
         {
-            return objemployee.GetAllEmployees();
+            return objemployee.GetAllEmployees(UserId, EntityId);
         }
-
-
-
-
 
         [HttpPost]
-        [Route("api/Employee/Create")]
-        public IEnumerable<Employee> Create([FromBody] Employee employee)
+        [Route("api/Employee/Create/{UserId}/{EntityId}")]
+        public IEnumerable<Employee> Create([FromBody] Employee Employee, string UserId, string EntityId)
         {
-            return objemployee.AddEmployee(employee);
+            return objemployee.AddEmployee(Employee, UserId, EntityId);
         }
-        [HttpDelete]
-        [Route("api/Employee/Delete/{id}")]
-        public IEnumerable<Employee> Delete(int id)
-        {
-            return objemployee.DeleteEmployee(id);
-        }
+        //[HttpDelete]
+        //[Route("api/Employee/Delete/{id}")]
+        //public IEnumerable<Employee> Delete(int id)
+        //{
+        //    return objemployee.DeleteDocument(id);
+        //}
         [HttpPost]
-        [Route("api/Employee/Edit/{id}")]
-        public IEnumerable<Employee> Edit([FromBody] Employee employee,int id)
+        [Route("api/Employee/Edit/{UserId}/{EntityId}/{id}")]
+        public IEnumerable<Employee> Edit([FromBody] Employee Employee, string UserId, string EntityId, int id)
         {
-            return objemployee.EditEmp(employee,id);
+            return objemployee.EditEmployee(Employee, UserId, EntityId, id);
         }
     }
 }

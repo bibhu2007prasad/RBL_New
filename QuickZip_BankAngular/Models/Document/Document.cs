@@ -7,7 +7,7 @@ namespace QuickZip_BankAngular.Models
 {
     public class Document
     {
-        
+        public Int64 EmpId { get; set; }
         public Int64 DocumentTypeid { get; set; }
         public string DocumentCode { get; set; }
         public string DocumentName { get; set; }
