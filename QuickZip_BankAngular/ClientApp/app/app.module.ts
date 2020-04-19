@@ -57,6 +57,8 @@ import { SubmembermasterComponent } from './master/submembermaster/submembermast
 import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
 import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
 import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
     declarations: [
         AppComponent
@@ -66,14 +68,14 @@ import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-
         , DesignationMasterComponent
         , HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent
         , BranchMasterComponent, ChargeMasterComponent, DocumentMasterComponent, TemplateMasterComponent, SettlementTypeMasterComponent,
-        BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, PsmmasterComponent, RblBranchMasterComponent 
+        BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, PsmmasterComponent, RblBranchMasterComponent, CorporatesetupComponent 
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        CommonModule,
+        CommonModule,        
         HttpClientModule
     ],
     providers: [LoginServiceService, { provide: 'BASE_URL', useFactory: getBaseUrl }],

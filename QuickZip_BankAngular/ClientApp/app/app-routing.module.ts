@@ -22,6 +22,7 @@ import { SubmembermasterComponent } from './master/submembermaster/submembermast
 import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
 import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
 import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
 
 const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
@@ -36,7 +37,7 @@ const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, p
     { path: 'ChargeMaster', component: ChargeMasterComponent },
     { path: 'DocumentMaster', component: DocumentMasterComponent },
     { path: 'TemplateMaster', component: TemplateMasterComponent },
-    { path: 'SettlemetTypeMaster', component: SettlementTypeMasterComponent },
+    { path: 'SettlementTypeMaster', component: SettlementTypeMasterComponent },
     { path: 'BusinessSegmentMaster', component: BusinessSegmentMasterComponent },
     { path: 'ReturnReasonMaster', component: ReturnReasonMasterComponent },
     { path: 'Allumrn', component: AllumrnComponent },
@@ -45,7 +46,8 @@ const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, p
     { path: 'Submembermaster', component: SubmembermasterComponent },
     { path: 'Utilitymaster', component: UtilitymasterComponent },
     { path: 'Psmmaster', component: PsmmasterComponent }, 
-    { path: 'RBLBranchmaster', component: RblBranchMasterComponent }
+    { path: 'RBLBranchmaster', component: RblBranchMasterComponent }, 
+    { path: 'Corporatesetup', component: CorporatesetupComponent }
 ];
 
 @NgModule({

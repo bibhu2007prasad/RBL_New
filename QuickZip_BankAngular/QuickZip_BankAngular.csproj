@@ -146,6 +146,8 @@
     <Content Include="ClientApp\app\master\charge-master\charge-master.component.html" />
     <Content Include="ClientApp\app\master\communicationtemplate\communicationtemplate.component.css" />
     <Content Include="ClientApp\app\master\communicationtemplate\communicationtemplate.component.html" />
+    <Content Include="ClientApp\app\master\corporatesetup\corporatesetup.component.css" />
+    <Content Include="ClientApp\app\master\corporatesetup\corporatesetup.component.html" />
     <Content Include="ClientApp\app\master\dashboard\dashboard.component.css" />
     <Content Include="ClientApp\app\master\dashboard\dashboard.component.html" />
     <Content Include="ClientApp\app\master\designation-master\designation-master.component.css" />
@@ -1056,6 +1058,8 @@
     <TypeScriptCompile Include="ClientApp\app\master\charge-master\charge-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\communicationtemplate\communicationtemplate.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\communicationtemplate\communicationtemplate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\corporatesetup\corporatesetup.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\corporatesetup\corporatesetup.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\designation-master\designation-master.component.spec.ts" />
