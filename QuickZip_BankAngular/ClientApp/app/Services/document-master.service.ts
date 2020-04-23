@@ -13,6 +13,7 @@ export class DocumentMasterService {
     baseUrl: string = ""; UserId: string = ""; EntityId: string = "";
     constructor(private _http: HttpClient, @Inject('BASE_URL') myAppUrl: string) {
         this.baseUrl = myAppUrl;
+        //    this.baseUrl = "http://localhost:49512/";
     }
 
     getDocuments(): Observable<any> {

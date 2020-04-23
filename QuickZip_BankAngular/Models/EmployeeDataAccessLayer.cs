@@ -99,9 +99,9 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                //string isDeleted = "0";
+                string isDeleted = "0";
                 string isActive = (employee.IsActive == "true") ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute("[Sp_RMMaster]", "@QueryType", "@RM_Code", "@RM_Name", "@UserId", "@EntityId", "@RM_Id", "@Mobile", "@Email", "@IsActive", "@IsDeleted", "@Designation", "UpdateData", employee.Emp_Code, employee.Emp_Name,UserId, EntityId, Convert.ToString(id), employee.PhoneNo, employee.EmailId, isActive);
+                var Result = context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute( "@QueryType", "@RM_Code", "@RM_Name", "@UserId", "@EntityId", "@RM_Id", "@Mobile", "@Email", "@IsActive", "@IsDeleted", "@Designation", "UpdateData", employee.Emp_Code, employee.Emp_Name,UserId, EntityId, Convert.ToString(id), employee.PhoneNo, employee.EmailId, isActive, isDeleted,Convert.ToString(employee.DesignationId));
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Employee>().ToList();

@@ -11,8 +11,10 @@ namespace QuickZip_BankAngular
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-           // config.EnableCors(new EnableCorsAttribute(ConfigurationManager.AppSettings["URL"], headers: "*", methods: "*"));
+            // config.EnableCors(new EnableCorsAttribute(ConfigurationManager.AppSettings["URL"], headers: "*", methods: "*"));
             // Web API routes
+            var cors = new EnableCorsAttribute("*", "*", "*");//origins,headers,methods   
+            config.EnableCors(cors);
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

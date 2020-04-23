@@ -24,12 +24,12 @@ var EmployeeMasterComponent = /** @class */ (function () {
     EmployeeMasterComponent.prototype.ngOnInit = function () {
         // debugger;
         this.EmployeeForm = this.formbulider.group({
-            EmployeeCode: ['', [Validators.required]],
-            EmployeeName: ['', [Validators.required]],
-            ContactNo: ['', [Validators.required]],
+            Emp_Code: ['', [Validators.required]],
+            Emp_Name: ['', [Validators.required]],
+            PhoneNo: ['', [Validators.required]],
             EmailID: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
             DesignationId: ['', [Validators.required]],
-            IsActive: ['', [Validators.required]],
+            IsActive: [''],
         });
         this.setClickedRow = function (index) {
             this.selectedRow = index;
@@ -78,6 +78,7 @@ var EmployeeMasterComponent = /** @class */ (function () {
         this.EmpId = 0;
         this.loading = false;
         this.message = null;
+        // this.BindDesignations();
     };
     EmployeeMasterComponent.prototype.SaveEmployee = function () {
         var _this = this;
@@ -102,12 +103,12 @@ var EmployeeMasterComponent = /** @class */ (function () {
     EmployeeMasterComponent.prototype.onRowClicked = function (data) {
         var Currentrowid = this.EmployeeForm.value;
         this.EmpId = data.EmpId;
-        this.EmployeeForm.controls['EmployeeCode'].setValue(data.Emp_Code);
-        this.EmployeeForm.controls['EmployeeName'].setValue(data.Emp_Name);
-        this.EmployeeForm.controls['ContactNo'].setValue(data.PhoneNo);
+        this.EmployeeForm.controls['Emp_Code'].setValue(data.Emp_Code);
+        this.EmployeeForm.controls['Emp_Name'].setValue(data.Emp_Name);
+        this.EmployeeForm.controls['PhoneNo'].setValue(data.PhoneNo);
         this.EmployeeForm.controls['EmailID'].setValue(data.EmailId);
         this.EmployeeForm.controls['DesignationId'].setValue(data.DesignationId);
-        this.EmployeeForm.controls['IsActive'].setValue(data.IsActive);
+        this.EmployeeForm.controls['IsActive'].setValue((data.IsActive == 'Active' ? true : false));
         //this.buttonDisabledDelete = false;
         this.buttonDisabledReset = false;
         this.Temp = 2;
@@ -149,7 +150,7 @@ var EmployeeMasterComponent = /** @class */ (function () {
         });
     };
     EmployeeMasterComponent.prototype.onSubmit = function () {
-        //debugger;
+        debugger;
         //alert('OnSubmi Clicked');
         this.submitted = true;
         if (this.EmployeeForm.valid) {

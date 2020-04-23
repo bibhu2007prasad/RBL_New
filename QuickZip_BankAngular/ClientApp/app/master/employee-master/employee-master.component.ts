@@ -40,14 +40,14 @@ export class EmployeeMasterComponent implements OnInit {
     ngOnInit() {
         // debugger;
         this.EmployeeForm = this.formbulider.group({
-            EmployeeCode: ['', [Validators.required]],
-            EmployeeName: ['', [Validators.required]],
+            Emp_Code: ['', [Validators.required]],
+            Emp_Name: ['', [Validators.required]],
 
-            ContactNo: ['', [Validators.required]],
+            PhoneNo: ['', [Validators.required]],
             EmailID: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
 
-            DesignationId: ['', [Validators.required]],
-            IsActive: ['', [Validators.required]],
+            DesignationId: [0, [Validators.required]],
+            IsActive: [false],
 
         });
         this.setClickedRow = function (index) {
@@ -87,8 +87,18 @@ export class EmployeeMasterComponent implements OnInit {
         // console.log(sessionStorage.getItem('ID'));
         this.loading = false;
     }
+    numberOnly(event): boolean {
+        debugger;
+        const charCode = (event.which) ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+          return false;
+        }
+        return true;
+    
+      }
     ResetEmployee() {
         this.EmployeeForm.reset();
+        this.EmployeeForm.controls['DesignationId'].setValue(0);
         this.buttonDisabledReset = false;
         //this.buttonDisabledDelete = true
         this.submitted = false;
@@ -98,6 +108,7 @@ export class EmployeeMasterComponent implements OnInit {
         this.EmpId = 0;
         this.loading = false;
         this.message = null;
+       // this.BindDesignations();
     }
     SaveEmployee() {
         //debugger;
@@ -123,13 +134,14 @@ export class EmployeeMasterComponent implements OnInit {
     onRowClicked(data: any) {
         const Currentrowid = this.EmployeeForm.value;
         this.EmpId = data.EmpId;
-        this.EmployeeForm.controls['EmployeeCode'].setValue(data.Emp_Code);
-        this.EmployeeForm.controls['EmployeeName'].setValue(data.Emp_Name);
-        this.EmployeeForm.controls['ContactNo'].setValue(data.PhoneNo);
+        this.EmployeeForm.controls['Emp_Code'].setValue(data.Emp_Code);
+        this.EmployeeForm.controls['Emp_Name'].setValue(data.Emp_Name);
+        this.EmployeeForm.controls['PhoneNo'].setValue(data.PhoneNo);
         this.EmployeeForm.controls['EmailID'].setValue(data.EmailId);
 
         this.EmployeeForm.controls['DesignationId'].setValue(data.DesignationId);
-        this.EmployeeForm.controls['IsActive'].setValue(data.IsActive);
+
+        this.EmployeeForm.controls['IsActive'].setValue((data.IsActive == 'Active' ? true:false));
 
         //this.buttonDisabledDelete = false;
         this.buttonDisabledReset = false;
@@ -173,13 +185,13 @@ export class EmployeeMasterComponent implements OnInit {
         )
     }
     onSubmit() {
-        //debugger;
+        debugger;
         //alert('OnSubmi Clicked');
         this.submitted = true;
         if (this.EmployeeForm.valid) {
             //this.sucess=true;
             const datat = this.EmployeeForm.value;
-
+            
             if (this.Temp == 1) {
                 this.SaveEmployee();
             }

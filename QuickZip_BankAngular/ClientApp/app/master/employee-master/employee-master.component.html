@@ -19,35 +19,35 @@
                     <div class="row boxhead">
                         <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
 
-                            <div class="form-group input-group" [ngClass]="displayFieldCss('EmployeeCode')">
+                            <div class="form-group input-group" [ngClass]="displayFieldCss('Emp_Code')">
                                 <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding">
                                     Employee Code:
                                 </label>
                                 <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
-                                    <input type="text" required name="Employee code" class="col-sm-12 col-md-12 col-xs-12" formControlName="EmployeeCode"
+                                    <input type="text" required name="Employee code" class="col-sm-12 col-md-12 col-xs-12" formControlName="Emp_Code"
                                            placeholder="Employee Code" />
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                            <div class="form-group input-group" [ngClass]="displayFieldCss('EmployeeName')">
+                            <div class="form-group input-group" [ngClass]="displayFieldCss('Emp_Name')">
                                 <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding" for="form-field-2">
                                     Employee Name:
                                 </label>
                                 <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
-                                    <input type="text" required name="Employee name" class="col-sm-12 col-md-12 col-xs-12" formControlName="EmployeeName"
+                                    <input type="text" required name="Employee name" class="col-sm-12 col-md-12 col-xs-12" formControlName="Emp_Name"
                                            placeholder="Employee Name" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                            <div class="form-group input-group" [ngClass]="displayFieldCss('ContactNo')">
+                            <div class="form-group input-group" [ngClass]="displayFieldCss('PhoneNo')">
                                 <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding" for="form-field-2">
                                     Contact No.:
                                 </label>
                                 <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
-                                    <input type="text" required name="Contact no" class="col-sm-12 col-md-12 col-xs-12" formControlName="ContactNo"
+                                    <input type="text" required name="Contact no" class="col-sm-12 col-md-12 col-xs-12" maxlength="10" (keypress)="numberOnly($event)" formControlName="PhoneNo"
                                            placeholder="Contact No" />
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                            <div class="form-group input-group" [ngClass]="displayFieldCss('EmailID')">
+                            <div class="form-group input-group">
                                 <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding" for="form-field-2">
                                     Designation:
                                 </label>
@@ -75,21 +75,22 @@
                                         <option>Managing Director</option>
                                         <option>CEO</option>
                                     </select>-->
-                                    <select class="col-md-12 col-xs-12 col-sm-12">
-                                        <option value="0">Select Designation</option>
-                                        <option *ngFor="let data of dddesignation.dataList" value={{data.DId}} >
+                                    <div class="form-group input-group" [ngClass]="displayFieldCss('DesignationId')">
+                                    <select class="col-md-12 col-xs-12 col-sm-12"  formControlName="DesignationId">
+                                        <option value="0" selected>Select Designation</option>
+                                        <option *ngFor="let data of dddesignation.dataList" value={{data.DId}}  >
                                             {{data.Designation}}
                                         </option>
-
                                     </select>
+                                </div>
 
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                            <div class="form-group input-group" [ngClass]="displayFieldCss('IsActive')">
+                            <div class="form-group input-group" >
                                 <label class="col-md-9 col-sm-12 col-xs-12 no-padding">
-                                    <input required name="Employee active" formControlName="IsActive" value="" type="checkbox" class="col-md-1 col-sm-2 col-xs-4">
+                                    <input  name="Employee active" formControlName="IsActive" value="" type="checkbox" class="col-md-1 col-sm-2 col-xs-4">
                                     <span class="col-md-4 col-sm-4 col-xs-4 no-padding"> Active</span>
                                 </label>
                             </div>

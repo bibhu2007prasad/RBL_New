@@ -7,6 +7,7 @@ var LoginServiceService = /** @class */ (function () {
         this._http = _http;
         this.baseUrl = "";
         this.baseUrl = myAppUrl;
+        // this.baseUrl = "http://localhost:49512/";
     }
     LoginServiceService.prototype.GetLogin = function (Username, Password) {
         return this._http.get(this.baseUrl + 'api/Login/getlogindetails/' + Username + '/' + Password);

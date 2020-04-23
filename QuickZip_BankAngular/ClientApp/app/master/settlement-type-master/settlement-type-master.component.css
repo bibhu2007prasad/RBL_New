@@ -1,7 +1,10 @@
 .card-header {
     padding: 0px;
 }
-
+.table tr.active td {
+    background-color: #123456 !important;
+    color: white;
+}
 .form-group label {
     font-size: 11px !important;
     margin-bottom: 4px;

@@ -349,12 +349,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BranchMasterController.cs" />
+    <Compile Include="Controllers\BusinessSegmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HolidayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\ReturnRegionController.cs" />
+    <Compile Include="Controllers\SettlementTypeController.cs" />
     <Compile Include="Entity\Common.cs" />
     <Compile Include="Entity\DbSecurity.cs" />
     <Compile Include="Entity\Demo.Context.cs">
@@ -982,6 +987,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BranchMasterDataAccessLayer.cs" />
+    <Compile Include="Models\BranchMaster\BranchMaster.cs" />
+    <Compile Include="Models\BranchMaster\State.cs" />
+    <Compile Include="Models\BusinessSegmentDataAccessLayer.cs" />
+    <Compile Include="Models\BussinessSegment\BusinessSegment.cs" />
     <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\DesignationDataAccessLayer.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
@@ -995,7 +1005,13 @@
     <Compile Include="Models\Login\Login.cs" />
     <Compile Include="Models\Login\Logindetails.cs" />
     <Compile Include="Models\Login\SaveLoginSessionTrxn.cs" />
+    <Compile Include="Models\RegionMaster\RegionMaster.cs" />
     <Compile Include="Models\ResFlag.cs" />
+    <Compile Include="Models\RegionMasterDataAccessLayer.cs" />
+    <Compile Include="Models\ReturnRegionDataAccessLayer.cs" />
+    <Compile Include="Models\ReturnRegionMaster\ReturnRegionMaster.cs" />
+    <Compile Include="Models\SettlementTypeDataAccessLayer.cs" />
+    <Compile Include="Models\SettlementType\SettlementType.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1021,10 +1037,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BranchMaster\" />
+    <Folder Include="Views\BusinessSegment\" />
     <Folder Include="Views\Designation\" />
     <Folder Include="Views\Document\" />
     <Folder Include="Views\Holiday\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\Region\" />
+    <Folder Include="Views\ReturnRegion\" />
+    <Folder Include="Views\SettlementType\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -1070,6 +1091,9 @@
     <TypeScriptCompile Include="ClientApp\app\master\settlement-type-master\settlement-type-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\template-master\template-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\template-master\template-master.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\BranchMaster\branchMaster.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\BranchMaster\state.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\BusinessSegment\businessSegment.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Designation\dddesignation.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Designation\designation.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Document\document.ts" />
@@ -1082,6 +1106,13 @@
     <TypeScriptCompile Include="ClientApp\app\master\user\user.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\user\user.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Login\logindetails.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\RegionMaster\regionMaster.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\ReturnRegion\returnRegion.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\SettlementType\settlementType.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\branch-master.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\branch-master.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\business-segment.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\business-segment.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\designation-master.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\designation-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\document-master.service.spec.ts" />
@@ -1092,6 +1123,12 @@
     <TypeScriptCompile Include="ClientApp\app\Services\holiday-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\login-service.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\region-master.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\region-master.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\return-region.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\return-region.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\settlementtype-master.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\settlementtype-master.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\sidebar\sidebar.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\sidebar\sidebar.component.ts" />
     <TypeScriptCompile Include="ClientApp\environments\environment.prod.ts" />

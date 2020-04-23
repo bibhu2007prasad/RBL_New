@@ -15,7 +15,8 @@ export class LoginServiceService {
     baseUrl: string = "";
     
     constructor(private _http: HttpClient, @Inject('BASE_URL') myAppUrl: string) {
-        this.baseUrl = myAppUrl;
+      this.baseUrl = myAppUrl;
+      //    this.baseUrl = "http://localhost:49512/";
     }
     GetLogin(Username, Password): Observable<Logindetails> {
         return this._http.get<Logindetails>(this.baseUrl + 'api/Login/getlogindetails/' + Username + '/' + Password);

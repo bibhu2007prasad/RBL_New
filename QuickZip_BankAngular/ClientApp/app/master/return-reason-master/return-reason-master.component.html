@@ -1,5 +1,6 @@
 <div class="main-content" id="maincontent">
     <div class="content">
+     <form [formGroup]="ReturnRegionFormGroup" autocomplete="off">
         <div class="col-md-12 col-sm-6 col-xs-4 contnt-wrapper">
             <div class="col-sm-6 col-md-6 col-xs-3 no-padding">
                 <span class="legal">Return Reason Master</span>
@@ -17,51 +18,51 @@
                 <div class="row boxhead">
                     <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
 
-                        <div class="form-group">
+                        <div class="form-group input-group" [ngClass]="displayFieldCss('ReasonCode')">
                             <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding">
                                 Reason Code:
                             </label>
                             <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
-                                <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
+                                <input type="text" required name="Reason code" class="col-sm-12 col-md-12 col-xs-12" formControlName="ReasonCode"
+                                placeholder="Reason Code" />
                             </div>
                         </div>
 
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                        <div class="form-group">
+                        <div class="form-group input-group" [ngClass]="displayFieldCss('ReturnReason')">
                             <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding" for="form-field-2">
                                 Return Reason:
                             </label>
                             <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
-                                <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
+                                <input type="text" required name="Return reason" class="col-sm-12 col-md-12 col-xs-12" formControlName="ReturnReason"
+                                placeholder="Return Reason" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                        <div class="form-group">
+                        <div class="form-group input-group" [ngClass]="displayFieldCss('Description')">
                             <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding" for="form-field-2">
                                 Description:
                             </label>
                             <div class="col-sm-7 col-md-7 col-xs-7 no-padding txtField">
-                                <textarea class="col-sm-12 col-md-12 col-xs-12" placeholder="Reason Description"></textarea>
+                                <textarea required name="description" class="col-sm-12 col-md-12 col-xs-12" formControlName="Description"  placeholder="Reason Description"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-10 col-xs-12 no-padding">
-
                         <label class="col-md-9 col-sm-12 col-xs-12 no-padding">
-                            <input name="Active" value="" type="checkbox">
+                            <input name="ReturnRegion active" formControlName="IsActive" value="" type="checkbox" class="col-md-1 col-sm-2 col-xs-4">
                             <span class="col-md-4 col-sm-4 col-xs-4 no-padding"> Active</span>
-
-
                         </label>
-
                     </div>
 
                     <div class="col-md-2 col-sm-2 col-xs-12  no-padding">
                         <div class=" col-md-12 pull-right no-padding-right">
-                            <input type="button" class=" AddbtnCSS btn btn-success" style="padding:0 8px; margin-top: 5px; display:inline-block; margin-right:5px" id="btnsaveholiday" value="Save">
-                            <input type="button" class=" AddbtnCSS btn btn-success" style=" margin-top: 5px; padding:0 8px" id="BtnReset" value="Reset">
+                            <!-- <input type="button" class=" AddbtnCSS btn btn-success" style="padding:0 8px; margin-top: 5px; display:inline-block; margin-right:5px" id="btnsaveholiday" value="Save">
+                            <input type="button" class=" AddbtnCSS btn btn-success" style=" margin-top: 5px; padding:0 8px" id="BtnReset" value="Reset"> -->
+                            <button style="width: fit-content;" type="submit" (click)="onSubmit()" class="btn btn-primary btn-block mr-1"> Save</button>
+                            <button [disabled]="buttonDisabledReset" style="width: fit-content;" type="submit" (click)="ResetReturnRegion();" class="btn btn-primary btn-block mr-1"> Reset</button>
                         </div>
                     </div>
                 </div>
@@ -83,44 +84,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>001</td>
-                        <td>Reason 1</td>
-                        <td>Reason 1 up</td>
-                        <td>john@gmail.com</td>
-                        <td>25 Dec 2019</td>
-                        <td>john@gmail.com</td>
-                        <td>25 Dec 2019</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>002</td>
-                        <td>Reason 2</td>
-                        <td>Reason 2 up</td>
-                        <td>john@gmail.com</td>
-                        <td>25 Dec 2019</td>
-                        <td>john@gmail.com</td>
-                        <td>25 Dec 2019</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>003</td>
-                        <td>Reason 3</td>
-                        <td>Reason 3 up</td>
-                        <td>john@gmail.com</td>
-                        <td>25 Dec 2019</td>
-                        <td>john@gmail.com</td>
-                        <td>25 Dec 2019</td>
-                        <td>Active</td>
+                    <tr *ngFor="let data of returnRegion.dataList ; index as i" (dblclick)="onRowClicked(data)" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+                        <!--<tr *ngFor="let data of holiday.dataList ; index as i" >-->
+                        <td style="display: none;">{{data.ReasonID }}</td>
+                        <td>{{data.Sno }}</td>
+                        <td>{{data.ReasonCode }}</td>
+                        <td>{{data.ReturnReason }}</td>
+                        <td>{{data.Description }}</td>
+                        
+
+
+                        <td>{{data.CreatedBy }}</td>
+                        <td>{{data.CreatedOn }}</td>
+                        <td>{{data.UpdatedBy }}</td>
+                        <td>{{data.UpdatedOn }}</td>
+                        <td>{{data.IsActive }}</td>
+                        
                     </tr>
                 </tbody>
 
             </table>
 
         </div>
-
+    </form>
     </div>
 </div>

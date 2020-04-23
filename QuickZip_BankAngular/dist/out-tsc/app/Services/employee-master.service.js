@@ -9,6 +9,7 @@ var EmployeeMasterService = /** @class */ (function () {
         this.UserId = "";
         this.EntityId = "";
         this.baseUrl = myAppUrl;
+        //this.baseUrl = "http://localhost:49512/";
     }
     EmployeeMasterService.prototype.BindDesignation = function () {
         var item = JSON.parse(sessionStorage.getItem('User'));
