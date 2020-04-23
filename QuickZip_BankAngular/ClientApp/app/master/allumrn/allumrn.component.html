@@ -56,7 +56,29 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 clearfix">
 
+            <div class="col-md-4 col-sm-4 col-xs-4 pull-right">
+                <div class="toolbar pull-right">
+                    <ul class="toolbar-content">
+                        <li (click)="onClick($event)">
+                            <i class="fa fa-plus-square" aria-hidden="true" title="">
+                            </i>
+                            <label>
+                                Add
+                            </label>
+                        </li>
+                        <li>
+                            <i class="fa fa-reply" aria-hidden="true" title="New">
+                            </i>
+                            <label>
+                                Back
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="col-md-12 col-sm-12 col-xs-12" id="tbldiv">
             <div class="col-md-2 col-sm-2 col-xs-12  no-padding">
                 <div class=" col-md-12 pull-right no-padding">
@@ -78,7 +100,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr (click)="onClick1($event)">
                         <td>Demo</td>
                         <td>Demo</td>
                         <td>Demo</td>
@@ -94,6 +116,171 @@
 
             </table>
 
+        </div>
+    </div>
+
+    <div class="modal" id="createUMRN" [style.display]="showModal ? 'block' : 'none'">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <img src="../../ClientApp/assets/images/link_file-512.png" />
+                        Create UMRN
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-5 col-md-5 col-xs-5 control-label">
+                                                UMRN:
+                                            </label>
+                                            <div class="col-sm-6 col-md-6 col-xs-6 no-padding">
+                                                <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-5 col-md-5 col-xs-5 control-label " for="form-field-2">
+                                                Customer Name:
+                                            </label>
+                                            <div class="col-sm-6 col-md-6 col-xs-6  no-padding">
+                                                <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-5 col-md-5 col-xs-5 control-label">
+                                                Reference No.:
+                                            </label>
+                                            <div class="col-sm-6 col-md-6 col-xs-6 no-padding">
+                                                <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-5 col-md-5 col-xs-5 control-label" for="form-field-2">
+                                                Amount:
+                                            </label>
+                                            <div class="col-sm-6 col-md-6 col-xs-6 no-padding">
+                                                <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-5 col-md-5 col-xs-5 control-label">
+                                                From Date:
+                                            </label>
+                                            <div class="col-sm-6 col-md-6 col-xs-6 no-padding">
+                                                <input type="date" class="col-sm-12 col-md-12 col-xs-12" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-5 col-md-5 col-xs-5 control-label" for="form-field-2">
+                                                To Date:
+                                            </label>
+                                            <div class="col-sm-6 col-md-6 col-xs-6 no-padding">
+                                                <input type="date" class="col-sm-12 col-md-12 col-xs-12" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" (click)="hide()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="umrnDetails" [style.display]="showModal1 ? 'block' : 'none'">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                         UMRN Statement
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="detailsUMRN">
+                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
+                            <div class=" col-md-12 pull-right no-padding">
+                                <input type="button" class=" AddbtnCSS btn btn-success" style="padding:0 8px; margin-top: 5px; display:inline-block; margin-right:5px" value="Export To Excel">
+                            </div>
+                        </div>
+                        <table style="margin-top:1%;">
+                            <thead>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>UMRN</th>
+                                    <th>Amount</th>
+                                    <th>Reference No.</th>
+                                    <th>Customer Name</th>
+                                    <th>From Date</th>
+                                    <th>To Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>XYZ00001</td>
+                                    <td>100</td>
+                                    <td>xyz01</td>
+                                    <td>XYZ</td>
+                                    <td>12 Feb 2020</td>
+                                    <td>18 Feb 2020</td>
+                                    <td>Saved</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+             
+            </div>
         </div>
     </div>
 </div>

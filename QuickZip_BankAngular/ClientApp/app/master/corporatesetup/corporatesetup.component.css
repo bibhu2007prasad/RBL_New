@@ -2,6 +2,35 @@
     padding: 0px;
 }
 
+.panel-heading {
+    background-color: #666;
+    padding: 4px 0px 5px 4px;
+    color: #fff;
+}
+
+.panel-default {
+    border: 1px solid #cdcdcd;
+}
+
+#divform {
+    overflow-y: scroll;
+    height: 510px;
+}
+
+.credentialsheading {
+    color: #1f497d;
+    font-weight: 500;
+    font-style: italic;
+}
+
+h4 {
+    font-size: 12px !important;
+    margin-bottom: 0px !important;
+}
+
+.logo-img {
+    border: 1px solid #cdcdcd;
+}
 
 #maincontent {
     position: absolute;

@@ -1,4 +1,46 @@
-﻿body {
+﻿
+.modal {
+    background: rgba(0,0,0,0.6) !important;
+}
+
+    .modal .modal-dialog {
+        margin: 100px auto
+    }
+    .modal .modal-header {
+        background: #efebeb;
+        padding: 8px;
+    }
+    .modal .modal-header .close {
+        position: absolute;
+        right: 9px;
+        top: 0;
+    }
+
+    .modal .modal-header .modal-title {
+        margin: 0 auto
+    }
+    .modal .modal-header h4{
+        text-align: center;
+        color: #003974;
+        font-size: 16px;
+        font-weight: bold;
+    }
+        .modal .modal-header h4 img {
+            display: block;
+            margin: 0 auto;
+        }
+    .modal .modal-body p {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 0px;
+        color: #0c335a;
+        font-weight: bold;
+    }
+
+
+
+
+body {
     margin: 0px;
     padding: 0px
 }
@@ -16,7 +58,9 @@ table {
             color: #ffffff !important;
         }
 
-
+    table tbody tr.active {
+        background: #a7b0bb;
+    }
 
 tr:nth-child(even) {
     background-color: #e0e2e4;

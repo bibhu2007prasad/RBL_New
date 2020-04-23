@@ -57,7 +57,7 @@ var AppModule = /** @class */ (function () {
                 FormsModule,
                 ReactiveFormsModule,
                 CommonModule,
-                HttpClientModule
+                HttpClientModule,
             ],
             providers: [LoginServiceService, { provide: 'BASE_URL', useFactory: getBaseUrl }],
             bootstrap: [AppComponent]

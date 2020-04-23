@@ -12,7 +12,7 @@ import { UserComponent } from './master/user/user.component';
 import { DashboardComponent } from './master/dashboard/dashboard.component';
 import { NachMandateComponent } from './master/nach-mandate/nach-mandate.component';
 import { HolidayMasterComponent } from './master/holiday-master/holiday-master.component'; 
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbModule, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { HolidayMasterService } from './Services/holiday-master.service'; 
 import { LoginServiceService } from './Services/login-service.service'; 
 
@@ -76,7 +76,7 @@ import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.
         FormsModule,
         ReactiveFormsModule,
         CommonModule,        
-        HttpClientModule
+        HttpClientModule, 
     ],
     providers: [LoginServiceService, { provide: 'BASE_URL', useFactory: getBaseUrl }],
 

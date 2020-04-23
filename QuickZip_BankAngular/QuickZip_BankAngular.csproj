@@ -340,7 +340,6 @@
     <Content Include="ClientApp\app\app.component.js.map" />
     <Content Include="ClientApp\app\app.component.spec.js.map" />
     <Content Include="ClientApp\app\app.module.js.map" />
-    <Content Include="ClientApp\assets\images\vssver.scc" />
     <EntityDeploy Include="Entity\Demo2_ZipNach_RBLBank_Angular.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Demo2_ZipNach_RBLBank_Angular.Designer.cs</LastGenOutput>

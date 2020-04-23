@@ -3,6 +3,12 @@ import { Component } from '@angular/core';
 var AllumrnComponent = /** @class */ (function () {
     function AllumrnComponent() {
     }
+    AllumrnComponent.prototype.onClick = function (event) {
+        this.showModal = true;
+    };
+    AllumrnComponent.prototype.hide = function () {
+        this.showModal = false;
+    };
     AllumrnComponent.prototype.ngOnInit = function () {
     };
     AllumrnComponent = tslib_1.__decorate([
@@ -10,8 +16,7 @@ var AllumrnComponent = /** @class */ (function () {
             selector: 'app-allumrn',
             templateUrl: './allumrn.component.html',
             styleUrls: ['./allumrn.component.css']
-        }),
-        tslib_1.__metadata("design:paramtypes", [])
+        })
     ], AllumrnComponent);
     return AllumrnComponent;
 }());
