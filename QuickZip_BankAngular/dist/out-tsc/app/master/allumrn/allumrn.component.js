@@ -6,8 +6,12 @@ var AllumrnComponent = /** @class */ (function () {
     AllumrnComponent.prototype.onClick = function (event) {
         this.showModal = true;
     };
+    AllumrnComponent.prototype.onClick1 = function (event) {
+        this.showModal1 = true;
+    };
     AllumrnComponent.prototype.hide = function () {
         this.showModal = false;
+        this.showModal1 = false;
     };
     AllumrnComponent.prototype.ngOnInit = function () {
     };

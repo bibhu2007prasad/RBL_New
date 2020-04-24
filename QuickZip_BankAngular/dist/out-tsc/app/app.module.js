@@ -35,6 +35,7 @@ import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.com
 import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
 import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
 import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
+import { LinkSetupComponent } from './master/link-setup/link-setup.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -49,7 +50,7 @@ var AppModule = /** @class */ (function () {
                 DesignationMasterComponent,
                 HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HolidayMasterComponent,
                 BranchMasterComponent, ChargeMasterComponent, DocumentMasterComponent, TemplateMasterComponent, SettlementTypeMasterComponent,
-                BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, PsmmasterComponent, RblBranchMasterComponent, CorporatesetupComponent
+                BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, PsmmasterComponent, RblBranchMasterComponent, CorporatesetupComponent, LinkSetupComponent
             ],
             imports: [
                 BrowserModule,

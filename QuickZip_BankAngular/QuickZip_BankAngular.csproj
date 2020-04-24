@@ -158,6 +158,8 @@
     <Content Include="ClientApp\app\master\employee-master\employee-master.component.html" />
     <Content Include="ClientApp\app\master\holiday-master\holiday-master.component.css" />
     <Content Include="ClientApp\app\master\holiday-master\holiday-master.component.html" />
+    <Content Include="ClientApp\app\master\link-setup\link-setup.component.css" />
+    <Content Include="ClientApp\app\master\link-setup\link-setup.component.html" />
     <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.css" />
     <Content Include="ClientApp\app\master\nach-mandate\nach-mandate.component.html" />
     <Content Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.css" />
@@ -1067,6 +1069,8 @@
     <TypeScriptCompile Include="ClientApp\app\master\document-master\document-master.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\employee-master\employee-master.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\employee-master\employee-master.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\link-setup\link-setup.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\master\link-setup\link-setup.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\newhistoricalmandate\newhistoricalmandate.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\master\psmmaster\psmmaster.component.spec.ts" />

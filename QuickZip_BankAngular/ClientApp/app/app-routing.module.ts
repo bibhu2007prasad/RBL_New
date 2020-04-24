@@ -23,6 +23,7 @@ import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.com
 import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
 import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
 import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
+import { LinkSetupComponent } from './master/link-setup/link-setup.component';
 
 const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
@@ -47,7 +48,8 @@ const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, p
     { path: 'Utilitymaster', component: UtilitymasterComponent },
     { path: 'Psmmaster', component: PsmmasterComponent }, 
     { path: 'RBLBranchmaster', component: RblBranchMasterComponent }, 
-    { path: 'Corporatesetup', component: CorporatesetupComponent }
+    { path: 'Corporatesetup', component: CorporatesetupComponent },
+    { path: 'LinkSetup', component: LinkSetupComponent }
 ];
 
 @NgModule({
