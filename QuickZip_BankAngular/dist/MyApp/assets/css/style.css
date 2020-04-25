@@ -115,3 +115,5 @@ select.dropdown {
 .pull-left {
     float: left
 }
+#dvLinks ul {
+max-height:550px !important}

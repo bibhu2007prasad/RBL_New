@@ -2,48 +2,30 @@
     <div class="content">
         <div class="col-md-12 col-sm-6 col-xs-4 contnt-wrapper">
             <div class="col-sm-6 col-md-6 col-xs-3 no-padding">
-                <span class="legal">User</span>
+                <span class="legal">User Role Setup</span>
             </div>
             <div class="rightmenu">
                 <div class="toolbar pull-right">
                     <ul class="toolbar-content">
 
-
-                        <li>
-                            <i class="fa fa-download" aria-hidden="true" title="Export"></i>
-                            <label>
-                                Export
-                            </label>
-                        </li>
                         <li>
                             <i class="fa fa-file-text" aria-hidden="true" title="New"></i>
                             <label>
                                 New
                             </label>
                         </li>
+
                         <li>
-                            <i class="fa fa-pencil-square-o" aria-hidden="true" title="Edit"></i>
-                            <label>
-                                Edit
-                            </label>
-                        </li>
-                        <li>
-                            <i class="fa fa-floppy-o" aria-hidden="true" title="Save"></i>
-                            <label>
-                                Save
-                            </label>
-                        </li>
-                        <li style="display: none">
-                            <i class="fa fa-key" aria-hidden="true" title="Reset Password"></i>
-                            <label>
-                                Reset Password
-                            </label>
-                        </li>
-                        <li style="display: none">
-                            <i class="fa fa-times" aria-hidden="true"
+                            <i class="fa fa-trash-o" aria-hidden="true"
                                title="Delete"></i>
                             <label>
                                 Delete
+                            </label>
+                        </li>
+                        <li>
+                            <i class="fa fa-eye" aria-hidden="true" title="Reset Password"></i>
+                            <label>
+                                View
                             </label>
                         </li>
                         <li>
@@ -56,549 +38,293 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4"></div>
-            <div class="col-md-5 col-sm-4 col-xs-4"></div>
-            <div class="col-md-3 col-sm-4 col-xs-4">
-                <div class="form-group">
-                    <label class="col-sm-5 col-md-4 col-xs-4 control-label" for="form-field-1">
-                        Search
-                    </label>
-                    <div class="col-sm-7 col-md-8 col-xs-7 displayinlineblock">
-                        <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
-                    </div>
-                </div>
-            </div>
-           
-        </div>
+
         <div class="col-md-12 col-sm-12 col-xs-12" id="tbldiv" style="display:none;">
             <table>
                 <thead>
                     <tr>
                         <th>Sr No.</th>
-                        <th>User Type</th>
-                        <th>User ID</th>
-                        <th>Contact No.</th>
-                        <th>Email Address</th>
+                        <th>Parent Bank Name</th>
+                        <th>Corporate Name</th>
+                        <th>Role Code</th>
+                        <th>Role Name</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Admin</td>
-                        <td>2524</td>
-                        <td>9990752520</td>
-                        <td>a@gmail.com</td>
+                        <td>RBL</td>
+                        <td>ABC</td>
+                        <td>Role1</td>
+                        <td>Role 1</td>
+                        <td>Description</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Admin</td>
-                        <td>2524</td>
-                        <td>9990752520</td>
-                        <td>a@gmail.com</td>
+                        <td>RBL</td>
+                        <td>ABC</td>
+                        <td>Role1</td>
+                        <td>Role 1</td>
+                        <td>Description</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Admin</td>
-                        <td>2524</td>
-                        <td>9990752520</td>
-                        <td>a@gmail.com</td>
+                        <td>3</td>
+                        <td>RBL</td>
+                        <td>ABC</td>
+                        <td>Role1</td>
+                        <td>Role 1</td>
+                        <td>Description</td>
                     </tr>
                 </tbody>
-                
+
             </table>
 
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12" id="divForm">
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                User Details
-                            </button>
-                        </h5>
+        <div class="clearfix"></div>
+        <div id="divform" class="col-md-12 col-sm-12 col-xs-12 no-padding mt-3" style="display:block;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="form-group">
+                            <label id="lblroleid" style="display:none"></label>
+                            <label class="col-sm-5 col-md-3 col-xs-4 control-label no-padding" for="form-field-1">
+                                Role Code:
+                            </label>
+                            <div class="col-sm-7 col-md-9 col-xs-7 no-padding-left txtField">
+                                <input type="text" id="txtRoleCode" class="col-sm-12 col-md-12 col-xs-12" />
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 no-padding">
+                        <div class="form-group">
+                            <label class="col-sm-6 col-md-3 col-xs-4 control-label no-padding" for="form-field-1">
+                                Role Name:
+                            </label>
+                            <div class="col-sm-6 col-md-9 col-xs-7 no-padding-left txtField">
+                                <input type="text" id="txtRoleName" class="col-sm-12 col-md-12 col-xs-12" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                        <div class="form-group">
+                            <label id="Label1" style="display:none"></label>
+                            <label class="col-sm-5 col-md-3 col-xs-4 control-label no-padding" for="form-field-1">
+                                Description:
+                            </label>
+                            <div class="col-sm-7 col-md-9 col-xs-7 no-padding txtField">
+                                <textarea id="txtDescription" class="col-sm-12 col-md-12 col-xs-12"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
+                        <input type="button" value="Create" id="btnCreate" class="btn col-md-3 btn-success pull-left" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-sm-12 col-xs-12 col-md-12 no-padding" id="divmenu">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding rolenameid">
+                        <span class="legal" id="roleborder">Role Name: Role 1</span>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <div class="row no-padding">
-                                <div class="col-md-4 col-sm-5 col-xs-12 no-padding">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 col-md-4 col-xs-4 control-label no-padding" for="form-field-1">
-                                            User Type
+                    </div>
+                    <div class="row pl-3 pr-3">
+                        <div class="col-md-5 col-sm-4 col-xs-12  parentmenu" id="divparentmenu">
+                            <label class="col-sm-5 col-md-4 col-xs-4 control-label no-padding" for="form-field-1" id="parentmenu">
+                                Parent Menu
+                            </label>
+
+                            <div class="row parentcheckbox">
+                                <div class="col-md-6 col-xs-3 col-sm-3 no-padding" id="35">
+                                    <div style="">
+                                        <label class="col-md-10 col-sm-10 col-xs-12" style="margin-top:10px">
+                                            <span class="fa fa-cogs" style="margin-right:5px"></span>
+                                            <span class="" style="margin-right:5px">Setup</span>
+                                            <input id="35" type="checkbox" class="check" style="position:absolute; left:131px;">
                                         </label>
-                                        <div id="User" class="col-sm-7 col-md-7 col-xs-7 no-padding-left radio displayinlineblock">
-                                            <label class="lblradiobtnss col-md-5 col-sm-4 col-xs-6">
-                                                <input name="rdoNomUser" value="u" type="radio" />
-                                                <span>User</span>
-                                            </label>
-                                            <label class="lblradiobtnss col-md-6 col-sm-6 col-xs-6">
-                                                <input name="rdoNomUser" value="a" type="radio" />
-                                                <span>Administrator</span>
-                                            </label>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row no-padding">
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding">
-                                    <div class="form-group">
-                                        <label class="col-sm-5 col-md-4 col-xs-4 control-label no-padding" for="form-field-1">
-                                            User ID
+                                <div class="col-md-6 col-xs-3 col-sm-3 no-padding" id="36">
+                                    <div style="">
+                                        <label class="col-md-10 col-sm-10 col-xs-12" style="margin-top:10px">
+                                            <span class="fa fa-cogs" style="margin-right:5px"></span>
+                                            <span class="" style="margin-right:5px">Setup</span>
+                                            <input id="35" type="checkbox" class="check" style="position:absolute; left:131px;">
                                         </label>
-                                        <div class="col-sm-7 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding " style="display: none">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 col-md-4 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Password
-                                        </label>
-                                        <div class="col-sm-6 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="password" value="1" class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding" style="display: none">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 col-md-4 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Confirm Password
-                                        </label>
-                                        <div class="col-sm-6 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="password" value="1"
-                                                   class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-padding">
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding">
-                                    <div class="form-group">
-                                        <label class="col-sm-5 col-md-4 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Contact No.
-                                        </label>
-                                        <div class="col-sm-7 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" maxlength="10" class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding">
-                                    <div class="form-group">
-                                        <label class="col-sm-5 col-md-5 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Email Address
-                                        </label>
-                                        <div class="col-sm-7 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 col-md-5 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Email to be sent on
-                                        </label>
-                                        <div class="col-sm-6 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12 " />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class=" col-sm-12 col-xs-12 col-md-12 no-padding">
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding" id="dvtxtBankValidationcount" style="display:none">
-                                    <div class="form-group">
-                                        <label class="col-sm-5 col-md-4 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Bank Validation
-                                        </label>
-                                        <div class="col-sm-7 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12  no-padding" id="dvtxtAccountValidationcount" style="display:none">
-                                    <div class="form-group">
-                                        <label class="col-sm-5 col-md-5 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Account Validation
-                                        </label>
-                                        <div class="col-sm-7 col-md-7 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12" />
-                                        </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="row no-padding">
-                                <div class=" col-sm-10 col-xs-12 col-md-12 no-padding">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Sponsor Bank Code
+
+                            <div class="row parentcheckbox">
+                                <div class="col-md-6 col-xs-3 col-sm-3 no-padding">
+                                    <div style="">
+                                        <label class="col-md-10 col-sm-10 col-xs-12" style="margin-top:10px">
+                                            <span class="fa fa-cogs" style="margin-right:5px"></span>
+                                            <span class="" style="margin-right:5px">Setup</span>
+                                            <input id="35" type="checkbox" class="check" style="position:absolute; left:131px;">
                                         </label>
-                                        <div class="col-sm-10 col-md-10 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12 no-padding  spneser bankcodeposition" />
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row no-padding">
-                                <div class=" col-sm-10 col-xs-12 col-md-12 no-padding">
-                                    <div class="form-group" style="margin-top:0px;">
-                                        <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding" for="form-field-1">
-                                            Category Code:
+                                <div class="col-md-6 col-xs-3 col-sm-3 no-padding">
+                                    <div style="">
+                                        <label class="col-md-10 col-sm-10 col-xs-12" style="margin-top:10px">
+                                            <span class="fa fa-cogs" style="margin-right:5px"></span>
+                                            <span class="" style="margin-right:5px">Setup</span>
+                                            <input id="35" type="checkbox" class="check" style="position:absolute; left:131px;">
                                         </label>
-                                        <div class="col-sm-10 col-md-10 col-xs-7 no-padding-left displayinlineblock">
-                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12 no-padding  spneser bankcodeposition" />
-                                        </div>
                                     </div>
                                 </div>
+
+
                             </div>
-                            <div class=" col-sm-12 col-xs-12 col-md-12 no-padding" style="display:none">
-                                <div class=" col-sm-10 col-xs-12 col-md-12 no-padding">
-                                    <div class="form-group">
-                                        <div class="col-md-3 col-sm-3 col-xs-12 no-padding">
-                                            <input type="checkbox" class="pull-left" />
-                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                IsDashBoard
-                                            </label>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                            <div class=" col-sm-12 col-xs-12 col-md-12 no-padding boxhead">
-                                <div class=" col-sm-12 col-xs-12 col-md-12 no-padding">
-                                    <div class=" col-sm-12 col-xs-12 col-md-12 no-padding-right">
-                                        <span class=" col-sm-6 col-md-2 col-xs-5 no-padding  useright">Access Right</span>
-                                    </div>
-                                    <div class=" col-sm-12 col-xs-12 col-md-12 no-padding-right">
-                                        <div class=" col-sm-12 col-xs-12 col-md-12 no-padding" style="display: none">
-                                            <div class="col-md-8 col-sm-8 col-xs-12 no-padding">
-                                                <div class="form-group">
-                                                    <label class="col-sm-6 col-md-5 col-xs-12 control-label no-padding " for="form-field-1">
-                                                        Transaction Presentment Access
-                                                    </label>
-                                                    <div class="col-sm-5 col-md-7 col-xs-7 no-padding">
-                                                        <input type="checkbox" name="rdoAccess"
-                                                               class="pull-left" value="1" />
-                                                        <div class="col-md-10 col-sm-10 col-xs-11 no-padding">
-                                                            <label class=" col-md-12 col-xs-12 col-sm-12 no-padding-right control-label">
-                                                                Presentment Maker
-                                                            </label>
-                                                        </div>
-                                                        <input type="checkbox" name="rdoAccess"
-                                                               class="pull-left" style="clear: both" value="2" />
-                                                        <div class="col-md-11 col-sm-10 col-xs-11 no-padding">
-                                                            <label class=" col-md-12 col-xs-12 col-sm-12 no-padding-right control-label">
-                                                                Presentment Checker
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-sm-11 col-md-12 col-xs-12 no-padding" style="display: none">
-                                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12 no-padding" />
-                                                            <label style="color: red; display: none">
-                                                                Invalid Selection
-                                                            </label>
-                                                            <label style="color: red; display: none">
-                                                                Please select atleast one maker
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class=" col-sm-12 col-xs-12 col-md-12 no-padding" style="display: none;">
-                                            <div class="col-md-8 col-sm-11 col-xs-12 no-padding">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding  pull-left" for="form-field-1">
-                                                        Mandate Access
-                                                    </label>
-                                                    <div id="divMandate" class="col-sm-10 col-md-10 col-xs-8 no-padding">
-                                                        <div class="col-md-3 col-sm-3 col-xs-12 no-padding">
-                                                            <input type="checkbox" class="pull-left"
-                                                                   checked />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Single Mandate
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-3 col-xs-12 no-padding" style="display: none">
-                                                            <input type="checkbox" style="clear: both"
-                                                                   class="pull-left">
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Bulk Validation
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-sm-11 col-xs-12 no-padding" id="DivchkAllowFundTransfer"
-                                             style="display: none;">
-                                            <div class="form-group">
-                                                <label class="col-sm-2 col-md-2 col-xs-4  control-label no-padding" for="form-field-1">
-                                                    Access Code
-                                                </label>
-                                                <div class="col-sm-10 col-md-10 col-xs-8 no-padding">
-                                                    <div class="col-md-3 col-sm-3 col-xs-12 no-padding-left no-padding-right">
-                                                        <input type="checkbox" class="pull-left" />
-                                                        <div class="col-md-10 col-sm-10 col-xs-10 no-padding">
-                                                            <label class=" col-md-12 col-xs-12 col-sm-12 no-padding-right control-label" style="font-weight: 100;">
-                                                                Allow Fund Transfer
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3 col-sm-3 col-xs-12 no-padding-left" id="DivIsZipSure">
-                                                        <input type="checkbox" class="pull-left" id="chkIsZipSure" />
-                                                        <div class="col-md-10 col-sm-10 col-xs-10 no-padding">
-                                                            <label class=" col-md-12 col-xs-12 col-sm-12 control-label" style="font-weight: 100;">
-                                                                Is Ziplink
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="divNachMandate" style="display: none" class=" col-sm-12 col-xs-12 col-md-12 no-padding">
-                                            <div class="col-md-11 col-sm-12 col-xs-12 no-padding">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                                        Nach-Mandate
-                                                    </label>
-                                                    <div class="col-sm-10 col-md-10 col-xs-7 no-padding">
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" value="1" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Create
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                            <input type="checkbox" style="clear: both" class="pull-left" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Edit
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" style="clear: both" value="2" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                View
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-3 col-xs-12 no-padding">
-                                                            <input type="checkbox" style="clear: both" class="pull-left" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Reference Edit
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" style="clear: both" value="2" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Download
-                                                            </label>
-                                                        </div>
-
-
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding" id="dvEnableCancel">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" style="clear: both" value="2" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                Enable Cancel
-                                                            </label>
-                                                        </div>
-
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-10 col-sm-10 col-xs-12 no-padding">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                                    </label>
-                                                    <div style="display: none;">
-                                                        <div class="col-sm-10 col-md-10 col-xs-7 no-padding" style="display: none;">
-                                                            <input type="text" class="col-sm-12 col-md-12 col-xs-12 viewrowmargin no-padding" />
-                                                            <label style="color: red; display: none">
-                                                                Please select atleast one user
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <label class="col-md-10 col-sm-10 col-xs-12 " style=" color: #e72d2d; font-size: 12px; display:none">All users selected</label>
-                                                </div>
-
-                                                <div id="divplusicon">
-                                                    <i class="fa fa-user-plus plusicon" aria-hidden="true"></i>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div id="dvPresentment" style="display: none" class=" col-sm-12 col-xs-12 col-md-12 no-padding">
-                                            <div class="col-md-11 col-sm-12 col-xs-12 no-padding">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                                        Presentment
-                                                    </label>
-                                                    <div class="col-sm-10 col-md-10 col-xs-8 no-padding">
-                                                        <div class="col-md-2 col-sm-3 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" value="17" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                UMRN History
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" style="clear: both" value="18" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                UMRN Upload
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess" class="pull-left"
-                                                                   style="clear: both" value="22" />
-                                                            <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                ALL UMRN
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
-                                                            <input type="checkbox" name="rdoAccess"
-                                                                   class="pull-left" style="clear: both" value="19" />
-                                                            <label class=" col-md-10 col-xs-11 col-sm-10 no-padding-right control-label">
-                                                                NACH Transaction Presentation
-                                                            </label>
-                                                        </div>
-                                                        <div id="divPresentmentAccess" class="col-sm-12 col-md-12 col-xs-12 no-padding" style="display: none;
-                                                                            margin-top: 1%;">
-                                                            <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
-                                                                <input type="checkbox" name="rdoAccess"
-                                                                       class="pull-left" value="1" />
-                                                                <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                    Presentment Maker
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-3 col-sm-4 col-xs-12 no-padding" style="display: none;">
-                                                                <input type="checkbox" name="rdoAccess"
-                                                                       class="pull-left" style="clear: both" value="2" />
-                                                                <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                                    Presentment Checker
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-10 col-sm-10 col-xs-12 no-padding" style="display: none">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                                    </label>
-                                                    <div class="col-sm-10 col-md-10 col-xs-7 no-padding" style="display: none;">
-
-                                                        <input type="text" class="col-sm-12 col-md-12 col-xs-12  viewrowmargin  no-padding" />
-                                                        <label style="color: red; display: none">
-                                                            Invalid Selection
-                                                        </label>
-                                                        <label style="color: red; display: none">
-                                                            Please select atleast one maker
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="dvBulkUpload" style="display: none" class=" col-sm-12 col-xs-12 col-md-12 no-padding">
-                                            <!--<div class="col-md-11 col-sm-12 col-xs-12 no-padding">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                                Bulk Upload
-                                            </label>
-                                            <div class="col-sm-10 col-md-10 col-xs-7 no-padding">
-                                                <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                    <input onclick="RemoveClass();" type="checkbox" name="rdoAccess" id="bulkphysical"
-                                                           class="pull-left" value="27" />
-                                                    <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                        Physical
-                                                    </label>
-                                                </div>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                    <input type="checkbox" id="bulkemandate" style="clear: both" class="pull-left" value="28" />
-                                                    <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                        Emandate
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-12 no-padding" style="display: none;" id="div2">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                            </label>
-                                            <div class="col-sm-10 col-md-10 col-xs-7 no-padding" id="div3" style="display: none;">
-                                                <input type="text" id="Text1" onchange="RemoveClass();" class="col-sm-12 col-md-12 col-xs-12 viewrowmargin no-padding" />
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                        </div>
-
-                                        <div id="dvVideos" style="display: none" class=" col-sm-12 col-xs-12 col-md-12 no-padding">
-                                            <!--<div class="col-md-11 col-sm-12 col-xs-12 no-padding">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                                Videos
-                                            </label>
-                                            <div class="col-sm-10 col-md-10 col-xs-7 no-padding">
-                                                <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                    <input onclick="RemoveClass();" type="checkbox" name="rdoAccess" id="physicaldemo"
-                                                           class="pull-left" value="25" />
-                                                    <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                        Physical
-                                                    </label>
-                                                </div>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                    <input type="checkbox" id="emandatedemo" style="clear: both" class="pull-left" value="26" />
-                                                    <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                        Emandate
-                                                    </label>
-                                                </div>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                    <input onclick="RemoveClass();" type="checkbox" name="rdoAccess" id="bulkphysicaldemo"
-                                                           class="pull-left" value="1" />
-                                                    <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                        Bulk Physical
-                                                    </label>
-                                                </div>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
-                                                    <input type="checkbox" id="bulkemandatedemo" style="clear: both" class="pull-left" />
-                                                    <label class=" col-md-10 col-xs-10 col-sm-10 no-padding-right control-label">
-                                                        Bulk Emandate
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-12 no-padding" style="display: none;" id="div4">
-                                        <div class="form-group">
-                                            <label class="col-sm-2 col-md-2 col-xs-4 control-label no-padding " for="form-field-1">
-                                            </label>
-                                            <div class="col-sm-10 col-md-10 col-xs-7 no-padding" id="div5" style="display: none;">
-                                                <input type="text" id="Text2" onchange="RemoveClass();" class="col-sm-12 col-md-12 col-xs-12 viewrowmargin no-padding" />
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                        </div>
-
+                            <div class="row parentcheckbox">
+                                <div class="col-md-6 col-xs-3 col-sm-3 no-padding">
+                                    <div style="">
+                                        <label class="col-md-10 col-sm-10 col-xs-12" style="margin-top:10px">
+                                            <span class="fa fa-cogs" style="margin-right:5px"></span>
+                                            <span class="" style="margin-right:5px">Setup</span>
+                                            <input id="35" type="checkbox" class="check" style="position:absolute; left:131px;">
+                                        </label>
                                     </div>
                                 </div>
+                                <div class="col-md-6 col-xs-3 col-sm-3 no-padding" id="36">
+                                    <div style="">
+                                        <label class="col-md-10 col-sm-10 col-xs-12" style="margin-top:10px">
+                                            <span class="fa fa-cogs" style="margin-right:5px"></span>
+                                            <span class="" style="margin-right:5px">Setup</span>
+                                            <input id="35" type="checkbox" class="check" style="position:absolute; left:131px;">
+                                        </label>
+                                    </div>
+                                </div>
+
+
                             </div>
 
                         </div>
+
+
+                        <div class="col-md-7 col-sm-4 col-xs-12 parentsubmenu no-padding " id="parentsubmenu">
+                            <label class="col-sm-5 col-md-4 col-xs-4 control-label no-padding " for="form-field-1" id="submenu">
+                                Sub Menu
+                            </label>
+                            <div class="col-sm-12 col-xs-12 col-md-12 " id="divsubmenu">
+                                <div class="col-sm-12 col-md-12 no-padding">
+                                    <div class="row">
+                                        <label class="col-sm-5 col-md-3 col-xs-4 control-label " for="form-field-1"><span class="fa fa-desktop" style="margin-right: 2px;"></span><span class=""> Template Master</span></label>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="full_54" value="54" type="checkbox" onclick="CheckAll(54)" class="check_54"><span>Full</span></label></div>
+                                        </div>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Read_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Read</span></label></div>
+                                        </div>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Write_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Write</span></label></div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Download_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Download</span></label></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5 col-md-3 col-xs-4 control-label " for="form-field-1"><span class="fa fa-desktop" style="margin-right: 2px;"></span><span class=""> Template Master</span></label>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="full_54" value="54" type="checkbox" onclick="CheckAll(54)" class="check_54"><span>Full</span></label></div>
+                                        </div>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Read_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Read</span></label></div>
+                                        </div>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Write_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Write</span></label></div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Download_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Download</span></label></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5 col-md-3 col-xs-4 control-label " for="form-field-1"><span class="fa fa-desktop" style="margin-right: 2px;"></span><span class=""> Template Master</span></label>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="full_54" value="54" type="checkbox" onclick="CheckAll(54)" class="check_54"><span>Full</span></label></div>
+                                        </div>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Read_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Read</span></label></div>
+                                        </div>
+                                        <div class="col-md-2 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Write_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Write</span></label></div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-3 col-sm-3 no-padding" id="">
+                                            <div style=""><label class="col-md-10 col-sm-10 col-xs-12"><input id="Download_54" value="54" type="checkbox" class="check_54" onclick="Checksingle(this,54)"><span>Download</span></label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
+                <div class="col-md-12 col-sm-12 col-xs-12" id="coorpratebankdiv">
 
-            </div>
+
+                    <div class="row" id="roleSelect">
+                        <div class="col-md-4 col-sm-4 col-xs-12  no-padding">
+                            <div class="form-group">
+                                <label class="col-sm-5 col-md-3 col-xs-4 control-label no-padding" for="form-field-1">
+                                    User Type:
+                                </label>
+                                <div class="col-sm-7 col-md-9 col-xs-7 txtField">
+
+                                    <select class="dropdown col-sm-12 col-md-12 col-xs-12">
+                                        <option>Select </option>
+                                        <option>Corporate</option>
+                                        <option>Bank</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 no-padding" id="divddlcorporate">
+                            <div class="form-group">
+                                <label class="col-sm-6 col-md-3 col-xs-4 control-label no-padding" for="form-field-1">
+                                    Corporate List:
+                                </label>
+                                <div class="col-sm-6 col-md-9 col-xs-7 txtField">
+                                    <select class="dropdown col-sm-12 col-md-12 col-xs-12">
+                                        <option>Select Corporate</option>
+                                        <option>ABC</option>
+                                        <option>XYZ</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 no-padding" id="divddlbank" style="display:none">
+                            <div class="form-group">
+                                <label class="col-sm-6 col-md-3 col-xs-4 control-label no-padding" for="form-field-1">
+                                    Bank List:
+                                </label>
+                                <div class="col-sm-6 col-md-9 col-xs-7 txtField">
+                                    <select class="dropdown col-sm-12 col-md-12 col-xs-12">
+                                        <option>Select Bank</option>
+                                        <option>RBL</option>
+                                        <option>HDFC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 no-padding ">
+                            <input type="button" value="Assign" id="savebtn" class=" col- btn btn-success pull-right" />
+                        </div>
+                    </div>
+
+                   
+
+                </div>
+
         </div>
     </div>
 </div>
-<!--<router-outlet></router-outlet>-->

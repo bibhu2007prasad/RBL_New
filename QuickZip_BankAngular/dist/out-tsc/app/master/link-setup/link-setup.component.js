@@ -3,6 +3,12 @@ import { Component } from '@angular/core';
 var LinkSetupComponent = /** @class */ (function () {
     function LinkSetupComponent() {
     }
+    LinkSetupComponent.prototype.onClick = function (event) {
+        this.showModal = true;
+    };
+    LinkSetupComponent.prototype.hide = function () {
+        this.showModal = false;
+    };
     LinkSetupComponent.prototype.ngOnInit = function () {
     };
     LinkSetupComponent = tslib_1.__decorate([
