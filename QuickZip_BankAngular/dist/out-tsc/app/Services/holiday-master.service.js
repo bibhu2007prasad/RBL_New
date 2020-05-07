@@ -8,6 +8,7 @@ var HolidayMasterService = /** @class */ (function () {
         this._http = _http;
         this.baseUrl = "";
         this.baseUrl = myAppUrl;
+        //    this.baseUrl = "http://localhost:49512/";
     }
     HolidayMasterService.prototype.getHolidays = function () {
         return this._http.get(this.baseUrl + 'api/Holiday/Index');

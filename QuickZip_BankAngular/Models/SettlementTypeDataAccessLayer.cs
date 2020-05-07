@@ -26,7 +26,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_SettlementType", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_SettlementType", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_SettlementType", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_SettlementType", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace QuickZip_BankAngular.Models
                 string isDeleted = "0";
                 string isActive = (SettlementTypeM.IsActive == "true") ? "1" : "0";
 
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@SettlementTypeCode", "@SettlementTypeName", "@SettlementTypeDesc", "@UserId", "@EntityId", "@IsActive", "SaveData_SettlementType", SettlementTypeM.SettlementCode, SettlementTypeM.SettlementType,SettlementTypeM.Description, UserId, EntityId, isActive);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@SettlementTypeCode", "@SettlementTypeName", "@SettlementTypeDesc", "@UserId", "@EntityId", "@IsActive", "SaveData_SettlementType", SettlementTypeM.SettlementCode, SettlementTypeM.SettlementType,SettlementTypeM.Description, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -101,7 +101,7 @@ namespace QuickZip_BankAngular.Models
             {
                 string isDeleted = "0";
                 string isActive = (SettlementTypeM.IsActive == "true") ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@SettlementTypeCode", "@SettlementTypeName", "@SettlementTypeDesc", "@UserId", "@EntityId", "@IsActive", "@SettlementTypeID", "UpdateData_SettlementType", SettlementTypeM.SettlementCode, SettlementTypeM.SettlementType,SettlementTypeM.Description, UserId, EntityId, isActive, Convert.ToString(id));
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<SettlementTypeM>().Execute("@QueryType", "@SettlementTypeCode", "@SettlementTypeName", "@SettlementTypeDesc", "@UserId", "@EntityId", "@IsActive", "@SettlementTypeID", "UpdateData_SettlementType", SettlementTypeM.SettlementCode, SettlementTypeM.SettlementType,SettlementTypeM.Description, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive, Convert.ToString(id));
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<SettlementTypeM>().ToList();

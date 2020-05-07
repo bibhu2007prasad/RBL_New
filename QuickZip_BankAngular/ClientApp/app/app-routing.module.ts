@@ -18,6 +18,12 @@ import { BusinessSegmentMasterComponent } from './master/business-segment-master
 import { ReturnReasonMasterComponent } from './master/return-reason-master/return-reason-master.component';
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
+import { CommunicationtemplateComponent } from './master/communicationtemplate/communicationtemplate.component';
+import { SubmembermasterComponent } from './master/submembermaster/submembermaster.component';
+import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
+import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
 
 const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
@@ -33,11 +39,17 @@ const routes: Routes = [{ path: '', redirectTo: '', component: LoginComponent, p
     { path: 'ChargeMaster', component: ChargeMasterComponent },
     { path: 'DocumentMaster', component: DocumentMasterComponent },
     { path: 'TemplateMaster', component: TemplateMasterComponent },
-    { path: 'SettlemetTypeMaster', component: SettlementTypeMasterComponent },
+    { path: 'SettlementTypeMaster', component: SettlementTypeMasterComponent },
     { path: 'BusinessSegmentMaster', component: BusinessSegmentMasterComponent },
     { path: 'ReturnReasonMaster', component: ReturnReasonMasterComponent },
     { path: 'Allumrn', component: AllumrnComponent },
-    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent }
+    { path: 'Newhistoricalmandate', component: NewhistoricalmandateComponent },
+    { path: 'Communicationtemplate', component: CommunicationtemplateComponent },
+    { path: 'Submembermaster', component: SubmembermasterComponent },
+    { path: 'Utilitymaster', component: UtilitymasterComponent },
+    { path: 'Psmmaster', component: PsmmasterComponent },
+    { path: 'RBLBranchmaster', component: RblBranchMasterComponent },
+    { path: 'Corporatesetup', component: CorporatesetupComponent }
 ];
 
 @NgModule({

@@ -16,14 +16,14 @@ namespace QuickZip_BankAngular.Models
         List<Designation> dataList = new List<Designation>();
 
         //For Temporary Bibhu start
-        string EntityId = "1";
-        string UserId = "3";
+        //string EntityId = "1";
+        //string UserId = "3";
         //For Temporary Bibhu end
-        public Dictionary<string, object> GetAllDesignations()
+        public Dictionary<string, object> GetAllDesignations(string UserId, string EntityId)
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_Designation", EntityId, UserId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_Designation", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -33,14 +33,14 @@ namespace QuickZip_BankAngular.Models
         }
 
         //To Add new employee record 
-        public IEnumerable<Designation> AddDesignation(Designation Designation)
+        public IEnumerable<Designation> AddDesignation(Designation Designation, string UserId, string EntityId)
         {
             try
             {
                 string isDeleted = "0";
                 string isActive = (Designation.IsActive == "true") ? "1" : "0";
                     
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "SaveDesignation_Master", Designation.DesignationCode, Designation.DesignationName, isActive, isDeleted, UserId, EntityId);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "SaveDesignation_Master", Designation.DesignationCode, Designation.DesignationName, isActive, isDeleted, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))));
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -56,11 +56,11 @@ namespace QuickZip_BankAngular.Models
         }
 
         //To Delete the record on a particular employee
-        public IEnumerable<Designation> DeleteDesignation(int id)
+        public IEnumerable<Designation> DeleteDesignation(int id, string UserId, string EntityId)
         {
             try
             {
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@UserId", "@EntityId", "@HolidayID", "DeleteHoliday_HolidayMaster", UserId, EntityId, id.ToString());
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@UserId", "@EntityId", "@HolidayID", "DeleteHoliday_HolidayMaster", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), id.ToString());
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Designation>().ToList();
@@ -75,13 +75,13 @@ namespace QuickZip_BankAngular.Models
 
 
         //To Update new employee record 
-        public IEnumerable<Designation> EditDesignation(Designation Designation, int id)
+        public IEnumerable<Designation> EditDesignation(Designation Designation, int id, string UserId, string EntityId)
         {
             try
             {
                 string isDeleted = "0";
                 string isActive = (Designation.IsActive == "true") ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationID", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "UpdateDesignation_Master", id.ToString(), Designation.DesignationCode,Designation.DesignationName,isActive, isDeleted, UserId, EntityId);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Designation>().Execute("@QueryType", "@DesignationID", "@DesignationCode", "@DesignationName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "UpdateDesignation_Master", id.ToString(), Designation.DesignationCode,Designation.DesignationName,isActive, isDeleted, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))));
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Designation>().ToList();

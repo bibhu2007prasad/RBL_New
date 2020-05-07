@@ -8,9 +8,10 @@ namespace QuickZip_BankAngular.Models
     public class RegionMaster
     {
         public Int64 Sno { get; set; }
-        public Int64 ReasonID { get; set; }
+        public Int64 RegionID { get; set; }
         public string RegionCode { get; set; }
         public string RegionName { get; set; }
+        public string StateName { get; set; }
         public string StateIDs { get; set; }
         public Int64 EntityID { get; set; }
 

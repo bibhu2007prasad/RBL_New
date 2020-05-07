@@ -14,29 +14,29 @@ namespace QuickZip_BankAngular.Controllers
     {
         DesignationDataAccessLayer objdesignation = new DesignationDataAccessLayer();
         [HttpGet]
-        [Route("api/Designation/Index")]
-        public Dictionary<string, object> Index()
+        [Route("api/Designation/Index/{UserId}/{EntityId}")]
+        public Dictionary<string, object> Index(string UserId, string EntityId)
         {
-            return objdesignation.GetAllDesignations();
+            return objdesignation.GetAllDesignations(UserId, EntityId);
         }
 
         [HttpPost]
-        [Route("api/Designation/Create")]
-        public IEnumerable<Designation> Create([FromBody] Designation designation)
+        [Route("api/Designation/Create/{UserId}/{EntityId}")]
+        public IEnumerable<Designation> Create([FromBody] Designation designation, string UserId, string EntityId)
         {
-            return objdesignation.AddDesignation(designation);
+            return objdesignation.AddDesignation(designation,UserId, EntityId);
         }
         [HttpDelete]
-        [Route("api/Designation/Delete/{id}")]
-        public IEnumerable<Designation> Delete(int id)
+        [Route("api/Designation/Delete/{id}/{UserId}/{EntityId}")]
+        public IEnumerable<Designation> Delete(int id, string UserId, string EntityId)
         {
-            return objdesignation.DeleteDesignation(id);
+            return objdesignation.DeleteDesignation(id,UserId, EntityId);
         }
         [HttpPost]
-        [Route("api/Designation/Edit/{id}")]
-        public IEnumerable<Designation> Edit([FromBody] Designation designation, int id)
+        [Route("api/Designation/Edit/{id}/{UserId}/{EntityId}")]
+        public IEnumerable<Designation> Edit([FromBody] Designation designation, int id, string UserId, string EntityId)
         {
-            return objdesignation.EditDesignation(designation, id);
+            return objdesignation.EditDesignation(designation, id, UserId, EntityId);
         }
     }
 }

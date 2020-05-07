@@ -9,6 +9,7 @@ var DocumentMasterService = /** @class */ (function () {
         this.UserId = "";
         this.EntityId = "";
         this.baseUrl = myAppUrl;
+        //    this.baseUrl = "http://localhost:49512/";
     }
     DocumentMasterService.prototype.getDocuments = function () {
         var item = JSON.parse(sessionStorage.getItem('User'));

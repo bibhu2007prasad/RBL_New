@@ -30,6 +30,12 @@ import { BusinessSegmentMasterComponent } from './master/business-segment-master
 import { ReturnReasonMasterComponent } from './master/return-reason-master/return-reason-master.component';
 import { AllumrnComponent } from './master/allumrn/allumrn.component';
 import { NewhistoricalmandateComponent } from './master/newhistoricalmandate/newhistoricalmandate.component';
+import { CommunicationtemplateComponent } from './master/communicationtemplate/communicationtemplate.component';
+import { SubmembermasterComponent } from './master/submembermaster/submembermaster.component';
+import { UtilitymasterComponent } from './master/utilitymaster/utilitymaster.component';
+import { PsmmasterComponent } from './master/psmmaster/psmmaster.component';
+import { RblBranchMasterComponent } from './master/rbl-branch-master/rbl-branch-master.component';
+import { CorporatesetupComponent } from './master/corporatesetup/corporatesetup.component';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -43,7 +49,7 @@ var AppModule = /** @class */ (function () {
                 DesignationMasterComponent,
                 HeaderComponent, FooterComponent, SidebarComponent, UserComponent, DashboardComponent, NachMandateComponent, HistoricalMandateComponent, HolidayMasterComponent,
                 BranchMasterComponent, ChargeMasterComponent, DocumentMasterComponent, TemplateMasterComponent, SettlementTypeMasterComponent,
-                BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent
+                BusinessSegmentMasterComponent, ReturnReasonMasterComponent, AllumrnComponent, NewhistoricalmandateComponent, CommunicationtemplateComponent, SubmembermasterComponent, UtilitymasterComponent, PsmmasterComponent, RblBranchMasterComponent, CorporatesetupComponent
             ],
             imports: [
                 BrowserModule,

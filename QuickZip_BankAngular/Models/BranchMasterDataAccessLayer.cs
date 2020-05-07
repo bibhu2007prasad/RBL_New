@@ -26,7 +26,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<State>().Execute("@QueryType", "@UserId", "@EntityId", "BindState_BranchMaster", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<State>().Execute("@QueryType", "@UserId", "@EntityId", "BindState_BranchMaster", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<BranchMaster>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_BranchMaster", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<BranchMaster>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_BranchMaster", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -58,7 +58,7 @@ namespace QuickZip_BankAngular.Models
 
                 string isActive = (branchMaster.IsActive == true) ? "1" : "0";
 
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BranchMaster>().Execute("@QueryType", "@branchcode", "@branchname", "@branchifsc", "@branchaddr", "@UserId", "@EntityId", "@IsActive", "@state", "@Micr", "SaveData_BranchMaster", branchMaster.BranchCode, branchMaster.BranchName,branchMaster.IFSC,branchMaster.Address, UserId, EntityId, isActive, Convert.ToString(branchMaster.StateId),branchMaster.MICR);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BranchMaster>().Execute("@QueryType", "@branchcode", "@branchname", "@branchifsc", "@branchaddr", "@UserId", "@EntityId", "@IsActive", "@state", "@Micr", "SaveData_BranchMaster", branchMaster.BranchCode, branchMaster.BranchName,branchMaster.IFSC,branchMaster.Address, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive, Convert.ToString(branchMaster.StateId),branchMaster.MICR);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -101,7 +101,7 @@ namespace QuickZip_BankAngular.Models
                 //string isActive = (branchMaster.IsActive == "true") ? "1" : "0";
 
                 string isActive = (branchMaster.IsActive == true) ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BranchMaster>().Execute("@QueryType", "@branchcode", "@branchname", "@branchifsc", "@branchaddr", "@UserId", "@EntityId", "@branchid", "@IsActive", "@state", "@Micr", "UpdateData_BranchMaster", branchMaster.BranchCode, branchMaster.BranchName,branchMaster.IFSC,branchMaster.Address, UserId, EntityId, Convert.ToString(id), isActive, Convert.ToString(branchMaster.StateId), branchMaster.MICR);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BranchMaster>().Execute("@QueryType", "@branchcode", "@branchname", "@branchifsc", "@branchaddr", "@UserId", "@EntityId", "@branchid", "@IsActive", "@state", "@Micr", "UpdateData_BranchMaster", branchMaster.BranchCode, branchMaster.BranchName,branchMaster.IFSC,branchMaster.Address, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), Convert.ToString(id), isActive, Convert.ToString(branchMaster.StateId), branchMaster.MICR);
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<BranchMaster>().ToList();

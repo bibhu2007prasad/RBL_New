@@ -23,7 +23,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<Document>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_DocumentType", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<Document>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_DocumentType", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace QuickZip_BankAngular.Models
                 string isDeleted = "0";
                 string isActive = (Document.IsActive == "true") ? "1" : "0";
 
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Document>().Execute("@QueryType", "@DocumentCode", "@DocumentName", "@UserId", "@EntityId", "@IsActive", "SaveData_DocumentType", Document.DocumentCode, Document.DocumentName, UserId, EntityId, isActive);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Document>().Execute("@QueryType", "@DocumentCode", "@DocumentName", "@UserId", "@EntityId", "@IsActive", "SaveData_DocumentType", Document.DocumentCode, Document.DocumentName, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -81,7 +81,7 @@ namespace QuickZip_BankAngular.Models
             {
                 //string isDeleted = "0";
                 string isActive = (Document.IsActive == "true") ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Document>().Execute("@QueryType", "@DocumentCode", "@DocumentName", "@UserId", "@EntityId", "@IsActive", "@DocumentTypeid", "UpdateData_DocumentType", Document.DocumentCode, Document.DocumentName,UserId, EntityId, isActive,Convert.ToString(id));
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<Document>().Execute("@QueryType", "@DocumentCode", "@DocumentName", "@UserId", "@EntityId", "@IsActive", "@DocumentTypeid", "UpdateData_DocumentType", Document.DocumentCode, Document.DocumentName, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive,Convert.ToString(id));
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Document>().ToList();

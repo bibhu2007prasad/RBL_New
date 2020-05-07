@@ -28,8 +28,8 @@ var EmployeeMasterComponent = /** @class */ (function () {
             Emp_Name: ['', [Validators.required]],
             PhoneNo: ['', [Validators.required]],
             EmailID: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-            DesignationId: ['', [Validators.required]],
-            IsActive: [''],
+            DesignationId: [0, [Validators.required]],
+            IsActive: [false],
         });
         this.setClickedRow = function (index) {
             this.selectedRow = index;
@@ -67,8 +67,17 @@ var EmployeeMasterComponent = /** @class */ (function () {
         // console.log(sessionStorage.getItem('ID'));
         this.loading = false;
     };
+    EmployeeMasterComponent.prototype.numberOnly = function (event) {
+        debugger;
+        var charCode = (event.which) ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    };
     EmployeeMasterComponent.prototype.ResetEmployee = function () {
         this.EmployeeForm.reset();
+        this.EmployeeForm.controls['DesignationId'].setValue(0);
         this.buttonDisabledReset = false;
         //this.buttonDisabledDelete = true
         this.submitted = false;

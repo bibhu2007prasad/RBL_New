@@ -13,29 +13,29 @@ namespace QuickZip_BankAngular.Controllers
     {
         HolidayDataAccessLayer objholiday = new HolidayDataAccessLayer();
         [HttpGet]
-        [Route("api/Holiday/Index")]
-        public Dictionary<string, object> Index()
+        [Route("api/Holiday/Index/{UserId}/{EntityId}")]
+        public Dictionary<string, object> Index(string UserId, string EntityId)
         {
-            return objholiday.GetAllHolidays();
+            return objholiday.GetAllHolidays(UserId,EntityId);
         }
 
         [HttpPost]
-        [Route("api/Holiday/Create")]
-        public IEnumerable<Holiday> Create([FromBody] Holiday holiday)
+        [Route("api/Holiday/Create/{UserId}/{EntityId}")]
+        public IEnumerable<Holiday> Create([FromBody] Holiday holiday,string UserId,string EntityId)
         {
-            return objholiday.AddHoliday(holiday);
+            return objholiday.AddHoliday(holiday,UserId,EntityId);
         }
         [HttpDelete]
-        [Route("api/Holiday/Delete/{id}")]
-        public IEnumerable<Holiday> Delete(int id)
+        [Route("api/Holiday/Delete/{id}/{UserId}/{EntityId}")]
+        public IEnumerable<Holiday> Delete(int id, string UserId, string EntityId)
         {
-            return objholiday.DeleteHoliday(id);
+            return objholiday.DeleteHoliday(id, UserId, EntityId);
         }
         [HttpPost]
-        [Route("api/Holiday/Edit/{id}")]
-        public IEnumerable<Holiday> Edit([FromBody] Holiday holiday, int id)
+        [Route("api/Holiday/Edit/{id}/{UserId}/{EntityId}")]
+        public IEnumerable<Holiday> Edit([FromBody] Holiday holiday, int id, string UserId, string EntityId)
         {
-            return objholiday.EditHoliday(holiday, id);
+            return objholiday.EditHoliday(holiday, id, UserId, EntityId);
         }
     }
 }

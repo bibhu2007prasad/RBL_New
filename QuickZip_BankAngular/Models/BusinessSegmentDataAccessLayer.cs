@@ -29,7 +29,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<BusinessSegment>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_BusinessSegment", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<BusinessSegment>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_BusinessSegment", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace QuickZip_BankAngular.Models
                 string isDeleted = "0";
                 string isActive = (BusinessSegment.IsActive == "true") ? "1" : "0";
 
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BusinessSegment>().Execute("@QueryType", "@BusinessSegmentCode", "@BusinessSegmentName", "@BusinessSegmentDesc", "@UserId", "@EntityId", "@IsActive", "SaveData_BusinessSegment", BusinessSegment.BusinessSegmentCode, BusinessSegment.BusinessSegmentName,BusinessSegment.BusinessSegmentDesc, UserId, EntityId, isActive);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BusinessSegment>().Execute("@QueryType", "@BusinessSegmentCode", "@BusinessSegmentName", "@BusinessSegmentDesc", "@UserId", "@EntityId", "@IsActive", "SaveData_BusinessSegment", BusinessSegment.BusinessSegmentCode, BusinessSegment.BusinessSegmentName,BusinessSegment.BusinessSegmentDesc, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -91,7 +91,7 @@ namespace QuickZip_BankAngular.Models
             {
                 string isDeleted = "0";
                 string isActive = (BusinessSegment.IsActive == "true") ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BusinessSegment>().Execute("@QueryType", "@BusinessSegmentCode", "@BusinessSegmentName", "@BusinessSegmentDesc", "@UserId", "@EntityId", "@IsActive", "@BusinessSegmentID", "UpdateData_BusinessSegment", BusinessSegment.BusinessSegmentCode, BusinessSegment.BusinessSegmentName,BusinessSegment.BusinessSegmentDesc, UserId, EntityId, isActive, Convert.ToString(id));
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<BusinessSegment>().Execute("@QueryType", "@BusinessSegmentCode", "@BusinessSegmentName", "@BusinessSegmentDesc", "@UserId", "@EntityId", "@IsActive", "@BusinessSegmentID", "UpdateData_BusinessSegment", BusinessSegment.BusinessSegmentCode, BusinessSegment.BusinessSegmentName,BusinessSegment.BusinessSegmentDesc, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), isActive, Convert.ToString(id));
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<BusinessSegment>().ToList();

@@ -26,7 +26,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_RMMaster]").With<DDDesignation>().Execute("@QueryType", "@UserId", "@EntityId", "BindDesignation", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_RMMaster]").With<DDDesignation>().Execute("@QueryType", "@UserId", "@EntityId", "BindDesignation", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace QuickZip_BankAngular.Models
                 string isDeleted = "0";
                 string isActive = (employee.IsActive == "true") ? "1" : "0";
 
-                var Result = context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute("@QueryType", "@RM_Code", "@RM_Name", "@UserId", "@EntityId", "@Mobile", "@Email", "@password", "@passwordKey", "@IsActive", "@IsDeleted", "@Designation", "Insertdata", employee.Emp_Code, employee.Emp_Name, UserId, EntityId,employee.PhoneNo, employee.EmailId,password, passwordKey,isActive,isDeleted,Convert.ToString(employee.DesignationId));
+                var Result = context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute("@QueryType", "@RM_Code", "@RM_Name", "@UserId", "@EntityId", "@Mobile", "@Email", "@password", "@passwordKey", "@IsActive", "@IsDeleted", "@Designation", "Insertdata", employee.Emp_Code, employee.Emp_Name, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), employee.PhoneNo, employee.EmailId,password, passwordKey,isActive,isDeleted,Convert.ToString(employee.DesignationId));
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -101,7 +101,7 @@ namespace QuickZip_BankAngular.Models
             {
                 string isDeleted = "0";
                 string isActive = (employee.IsActive == "true") ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute( "@QueryType", "@RM_Code", "@RM_Name", "@UserId", "@EntityId", "@RM_Id", "@Mobile", "@Email", "@IsActive", "@IsDeleted", "@Designation", "UpdateData", employee.Emp_Code, employee.Emp_Name,UserId, EntityId, Convert.ToString(id), employee.PhoneNo, employee.EmailId, isActive, isDeleted,Convert.ToString(employee.DesignationId));
+                var Result = context.MultipleResults("[dbo].[Sp_RMMaster]").With<Employee>().Execute( "@QueryType", "@RM_Code", "@RM_Name", "@UserId", "@EntityId", "@RM_Id", "@Mobile", "@Email", "@IsActive", "@IsDeleted", "@Designation", "UpdateData", employee.Emp_Code, employee.Emp_Name, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), Convert.ToString(id), employee.PhoneNo, employee.EmailId, isActive, isDeleted,Convert.ToString(employee.DesignationId));
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<Employee>().ToList();

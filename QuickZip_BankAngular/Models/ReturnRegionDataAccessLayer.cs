@@ -29,7 +29,7 @@ namespace QuickZip_BankAngular.Models
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<ReturnRegionMaster>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_ReturnReason_Master", UserId, EntityId));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[Sp_Master]").With<ReturnRegionMaster>().Execute("@QueryType", "@UserId", "@EntityId", "BindGrid_ReturnReason_Master", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -48,7 +48,7 @@ namespace QuickZip_BankAngular.Models
                  string isActive = (ReturnRegionMaster.IsActive == "true") ? "1" : "0";
                 //string isActive = (ReturnRegionMaster.IsActive == true) ? "1" : "0";
 
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<ReturnRegionMaster>().Execute("@QueryType", "@ReasonCode", "@ReasonName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "@Description", "SaveReturnReason_Master", ReturnRegionMaster.ReasonCode, ReturnRegionMaster.ReturnReason,isActive,isDeleted, UserId, EntityId,  ReturnRegionMaster.Description);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<ReturnRegionMaster>().Execute("@QueryType", "@ReasonCode", "@ReasonName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "@Description", "SaveReturnReason_Master", ReturnRegionMaster.ReasonCode, ReturnRegionMaster.ReturnReason,isActive,isDeleted, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))),  ReturnRegionMaster.Description);
                 foreach (var _holiday in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -90,7 +90,7 @@ namespace QuickZip_BankAngular.Models
                 string isDeleted = "0";
                 string isActive = (ReturnRegionMaster.IsActive == "true") ? "1" : "0";
                // string isActive = (ReturnRegionMaster.IsActive == true) ? "1" : "0";
-                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<ReturnRegionMaster>().Execute("@QueryType", "@ReasonId", "@ReasonCode", "@ReasonName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "@Description", "UpdateReturnReason_Master", Convert.ToString(id), ReturnRegionMaster.ReasonCode, ReturnRegionMaster.ReturnReason, isActive,isDeleted, UserId, EntityId,ReturnRegionMaster.Description);
+                var Result = context.MultipleResults("[dbo].[Sp_Master]").With<ReturnRegionMaster>().Execute("@QueryType", "@ReasonId", "@ReasonCode", "@ReasonName", "@IsActive", "@IsDeleted", "@UserId", "@EntityId", "@Description", "UpdateReturnReason_Master", Convert.ToString(id), ReturnRegionMaster.ReasonCode, ReturnRegionMaster.ReturnReason, isActive,isDeleted, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), ReturnRegionMaster.Description);
                 foreach (var _holiday in Result)
                 {
                     dataList = _holiday.Cast<ReturnRegionMaster>().ToList();

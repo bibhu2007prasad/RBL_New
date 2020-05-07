@@ -9,12 +9,31 @@
         border-right: 1px solid #cdcdcd !important;
     }
 
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+        #dvLinks ul li ul {
+            border-right: 0px !important;
+            list-style: none;
+            width:91%;
+        }
+            #dvLinks ul li {
+           
+                font-size: 12px;
+                color: #1e3d65;
+            }
+                #dvLinks ul li ul li {
+                    font-size: 12px;
+                    border-bottom: 1px solid #cdcdcd;
+                    padding-bottom: 3px;
+                }
+        #dvLinks ul li a, #dvLinks ul li ul li a {
+            color: #1f497d !important
+        }
+        #dvLinks ul li i {
+        padding-right:3px}
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
 td, th {
     border: 1px solid #dddddd;

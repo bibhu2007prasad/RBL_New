@@ -16,7 +16,9 @@ table {
             color: #ffffff !important;
         }
 
-
+    table tbody tr.active {
+        background: #a7b0bb;
+    }
 
 tr:nth-child(even) {
     background-color: #e0e2e4;
