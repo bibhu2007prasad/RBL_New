@@ -5,10 +5,9 @@ using System.Web;
 
 namespace QuickZip_BankAngular.Models
 {
-    public class SponserBankUnProcOutWard
+    public class SponserBank
     {
-        //public string sponserbankcode { get; set; }
-        public string sponsorbankcode { get; set; }
         public string name { get; set; }
+        public Int64 SponsorBankCodeId { get; set; }
     }
 }
